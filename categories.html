@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Website title and favicon -->
+    <title>Categories | Wizdom</title>
+    <link rel="icon" type="image/x-icon" href="Images/Test.png">
+
+    <!-- CSS sources -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <section id="navigation-bar">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light" id="navbar">
+            <div class="container-fluid" style="width: 90%;">
+
+                <!-- Website logo and name -->
+                <a class="navbar-brand" href="#"><img src="Images/Test.png" alt="WizdomLogo" height="50px"
+                        width="50px"></a>
+                <a class="navbar-brand fw-bold" href="#">Wizdom</a>
+
+                <!-- Button that toggles the collapsible navigation menu -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                        <a class="nav-link" href="about.html">About Us</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Explore our Collection</a></li>
+                                <li><a class="dropdown-item" href="#romanceCategory">Romantic Fiction</a></li>
+                                <li><a class="dropdown-item" href="#fantasyCategory">Fantasy Fiction</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Dropdown link -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Link</a></li>
+                                <li><a class="dropdown-item" href="#">Link</a></li>
+                                <li><a class="dropdown-item" href="#">Link</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="#"> <i class="fa fa-shopping-cart"
+                            style="font-size:24px"></i> Cart</a>
+
+                    <!-- Dropdown link -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Profile
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">View my Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- All collection section -->
+    <section class="section fade-in-section">
+        <div class="container-fluid">
+
+            <!-- Category name -->
+            <div class="col text-center category-name">
+                Explore our Collection
+            </div>
+
+            <!-- Books in carousel -->
+            <div class="col-md-12 book-carousel">
+                <div id="carousel3" class="carousel slide d-flex align-items-center" data-bs-interval="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel3" data-bs-slide-to="2" aria-current="true"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel3" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner" id="allCarousel">
+
+                        <!-- Carousel item 1 -->
+                        <div class="carousel-item active">
+
+                            <div class="row justify-content-center">
+
+                                <!-- Book 1 column -->
+                                <a class="col-md-3 d-flex justify-content-center romanceBook1"></a>
+
+                                <!-- Book 2 column -->
+                                <a class="col-md-3 d-flex justify-content-center romanceBook2"></a>
+
+                                <!-- Book 3 column -->
+                                <a class="col-md-3 d-flex justify-content-center romanceBook3"></a>
+
+                            </div>
+
+                            <!-- Bookshelf -->
+                            <div class="col-md-9 bookshelf"></div>
+
+                        </div>
+
+                        <!-- Carousel item 2 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+
+                                <!-- Book 4 column -->
+                                <a class="col-md-3 d-flex justify-content-center romanceBook4"></a>
+
+                                <!-- Book 5 column -->
+                                <a class="col-md-3 d-flex justify-content-center romanceBook5"></a>
+
+                                <!-- Book 6 column -->
+                                <a class="col-md-3 d-flex justify-content-center romanceBook6"></a>
+
+                            </div>
+
+                            <!-- Bookshelf -->
+                            <div class="col-md-9 bookshelf"></div>
+
+                        </div>
+
+                        <!-- Carousel item 3 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+
+                                <!-- Book 7 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook1"></a>
+
+                                <!-- Book 8 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook2"></a>
+
+                                <!-- Book 9 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook3"></a>
+
+                            </div>
+
+                            <!-- Bookshelf -->
+                            <div class="col-md-9 bookshelf"></div>
+
+                        </div>
+
+                        <!-- Carousel item 4 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+
+                                <!-- Book 10 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook4"></a>
+
+                                <!-- Book 11 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook5"></a>
+
+                                <!-- Book 12 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook6"></a>
+
+                            </div>
+
+                            <!-- Bookshelf -->
+                            <div class="col-md-9 bookshelf"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- Carousel previous and next buttons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel3"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel3"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Romance category section -->
+    <section class="section fade-in-section">
+        <div class="container-fluid" id="romanceCategory">
+
+            <!-- Category name -->
+            <div class="col text-center category-name">
+                Romantic Fiction
+            </div>
+
+            <!-- Books in carousel -->
+            <div class="col-md-12 book-carousel">
+                <div id="carousel1" class="carousel slide d-flex align-items-center" data-bs-interval="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <div class="carousel-inner" id="romanceCarousel">
+
+                        <!-- Carousel item 1 -->
+                        <div class="carousel-item active">
+
+                            <div class="row justify-content-center">
+
+                                <!-- Book 1 column -->
+                                <div class="col-md-3 d-flex justify-content-center romanceBook1"></div>
+
+                                <!-- Book 2 column -->
+                                <div class="col-md-3 d-flex justify-content-center romanceBook2"></div>
+
+                                <!-- Book 3 column -->
+                                <div class="col-md-3 d-flex justify-content-center romanceBook3"></div>
+
+                            </div>
+
+                            <!-- Bookshelf -->
+                            <div class="col-md-9 bookshelf"></div>
+
+                        </div>
+
+                        <!-- Carousel item 2 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+
+                                <!-- Book 4 column -->
+                                <div class="col-md-3 d-flex justify-content-center romanceBook4"></div>
+
+                                <!-- Book 5 column -->
+                                <div class="col-md-3 d-flex justify-content-center romanceBook5"></div>
+
+                                <!-- Book 6 column -->
+                                <div class="col-md-3 d-flex justify-content-center romanceBook6"></div>
+
+                            </div>
+
+                            <!-- Bookshelf -->
+                            <div class="col-md-9 bookshelf"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- Carousel previous and next buttons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fantasy category section -->
+    <section class="section fade-in-section">
+        <div class="container-fluid" id="fantasyCategory">
+
+            <!-- Category name -->
+            <div class="col text-center category-name">
+                Fantasy Fiction
+            </div>
+
+            <!-- Books in carousel -->
+            <div class="col-md-12 book-carousel">
+                <div id="carousel2" class="carousel slide d-flex align-items-center" data-bs-interval="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <div class="carousel-inner" id="fantasyCarousel">
+
+                        <!-- Carousel item 1 -->
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+
+                                <!-- Book 1 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook1"></a>
+
+                                <!-- Book 2 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook2"></a>
+
+                                <!-- Book 3 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook3"></a>
+
+                            </div>
+
+                            <!-- Bookshelf -->
+                            <div class="col-md-9 bookshelf"></div>
+
+                        </div>
+
+                        <!-- Carousel item 2 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+
+                                <!-- Book 4 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook4"></a>
+
+                                <!-- Book 5 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook5"></a>
+
+                                <!-- Book 6 column -->
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook6"></a>
+
+                            </div>
+
+                            <!-- Bookshelf -->
+                            <div class="col-md-9 bookshelf"></div>
+
+                        </div>
+                    </div>
+
+                    <!-- Carousel previous and next buttons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal to display book info -->
+    <div class="modal fade modal-zoom" id="bookInfoModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal title -->
+                <div class="modal-header text-center">
+                    <h5 class="modal-title" style="width: 100%;" id="ModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal content -->
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-3 d-flex justify-content-center">
+                            <div class="book">
+                                <div class="book-cover"></div>
+                                <div class="book-content"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 book-info"></div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div class="col offset-md-4 d-flex justify-content-end">
+                        <button class="btn minus" type="submit"> - </button>
+                        <input type="text" value="1" />
+                        <button class="btn plus" type="submit"> + </button>
+                    </div>
+                    <button type="button" class="btn btn-primary ">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to display guidelines -->
+    <div class="modal fade modal-zoom" id="guideModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal title -->
+                <div class="modal-header text-center">
+                    <h5 class="modal-title" style="width: 100%;" id="ModalLabel">Renting Books: How It Works</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal content -->
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-3 d-flex justify-content-center">
+                            <img src="Images/LogoWithoutBackground.png" height="450px" width="450px">
+                        </div>
+                        <div class="col-md-8 book-info">
+                            Guidelines to rent book.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got It</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <!-- Bootstrap 5 JavaScript library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery library from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- External JavaScript file -->
+    <script src="category.js"></script>
+
+</body>
+
+</html>
