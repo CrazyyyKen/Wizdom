@@ -1,30 +1,12 @@
 // Show modal on page load
 $(window).on('load', function () {
-    $('#guideModal').modal('show');
+
+    // 1000 milliseconds (1 second) delay before showing the modal
+    setTimeout(function () {
+        $('#guideModal').modal('show');
+    }, 800);
+
 });
-
-// Get navbar element
-const navbar = document.getElementById("navbar");
-
-// Function to handle scroll event
-function handleScroll() {
-
-    // Check the scroll position
-    if (window.scrollY > 10) {
-
-        // Add the "navbar-scrolled" class to change the color
-        navbar.classList.add("navbar-scrolled");
-
-    } else {
-
-        // Remove the "navbar-scrolled" class
-        navbar.classList.remove("navbar-scrolled");
-
-    }
-}
-
-// Listen for the scroll event and call the handleScroll function
-window.addEventListener("scroll", handleScroll);
 
 // Trigger fade-in and fade-out effect based on the viewport height
 $(document).ready(function () {
@@ -36,7 +18,7 @@ $(document).ready(function () {
         var elementHeight = rect.bottom - rect.top;
 
         // 50% threshold
-        var threshold = 0.5; 
+        var threshold = 0.5;
 
         return rect.bottom >= viewportHeight * (1 - threshold) && rect.top <= viewportHeight * threshold;
     }
@@ -59,7 +41,7 @@ $(document).ready(function () {
     $(window).on("scroll", function () {
         handleFadeIn();
     });
-    
+
 });
 
 // Generate book container
@@ -178,3 +160,4 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', handlePlusClick);
     });
 });
+

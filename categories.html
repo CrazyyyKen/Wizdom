@@ -37,7 +37,7 @@
 
                 <!-- Navigation Links -->
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav ms-auto">
                         <a class="nav-link" aria-current="page" href="home.html">Home</a>
                         <a class="nav-link" href="about.html">About Us</a>
                         <li class="nav-item dropdown">
@@ -64,24 +64,25 @@
                                 <li><a class="dropdown-item" href="#">Link</a></li>
                             </ul>
                         </li>
+
                     </div>
-                </div>
 
-                <div class="navbar-nav">
-                    <a class="nav-link" aria-current="page" href="#"> <i class="fa fa-shopping-cart"
-                            style="font-size:24px"></i> Cart</a>
-
-                    <!-- Dropdown link -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Profile
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">View my Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Log Out</a></li>
-                        </ul>
-                    </li>
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" aria-current="page" href="#"> <i class="fa fa-shopping-cart"
+                                style="font-size:24px"></i> Cart</a>
+    
+                        <!-- Dropdown link -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Profile
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">View my Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -92,7 +93,7 @@
         <div class="container-fluid">
 
             <!-- Category name -->
-            <div class="col text-center category-name">
+            <div class="col text-center category-name mt-5">
                 Explore our Collection
             </div>
 
@@ -120,10 +121,10 @@
                                 <a class="col-md-3 d-flex justify-content-center romanceBook1"></a>
 
                                 <!-- Book 2 column -->
-                                <a class="col-md-3 d-flex justify-content-center romanceBook2"></a>
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook4"></a>
 
                                 <!-- Book 3 column -->
-                                <a class="col-md-3 d-flex justify-content-center romanceBook3"></a>
+                                <a class="col-md-3 d-flex justify-content-center romanceBook5"></a>
 
                             </div>
 
@@ -140,7 +141,7 @@
                                 <a class="col-md-3 d-flex justify-content-center romanceBook4"></a>
 
                                 <!-- Book 5 column -->
-                                <a class="col-md-3 d-flex justify-content-center romanceBook5"></a>
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook1"></a>
 
                                 <!-- Book 6 column -->
                                 <a class="col-md-3 d-flex justify-content-center romanceBook6"></a>
@@ -157,10 +158,10 @@
                             <div class="row justify-content-center">
 
                                 <!-- Book 7 column -->
-                                <a class="col-md-3 d-flex justify-content-center fantasyBook1"></a>
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook2"></a>
 
                                 <!-- Book 8 column -->
-                                <a class="col-md-3 d-flex justify-content-center fantasyBook2"></a>
+                                <a class="col-md-3 d-flex justify-content-center romanceBook2"></a>
 
                                 <!-- Book 9 column -->
                                 <a class="col-md-3 d-flex justify-content-center fantasyBook3"></a>
@@ -177,10 +178,10 @@
                             <div class="row justify-content-center">
 
                                 <!-- Book 10 column -->
-                                <a class="col-md-3 d-flex justify-content-center fantasyBook4"></a>
+                                <a class="col-md-3 d-flex justify-content-center fantasyBook5"></a>
 
                                 <!-- Book 11 column -->
-                                <a class="col-md-3 d-flex justify-content-center fantasyBook5"></a>
+                                <a class="col-md-3 d-flex justify-content-center romanceBook3"></a>
 
                                 <!-- Book 12 column -->
                                 <a class="col-md-3 d-flex justify-content-center fantasyBook6"></a>
@@ -215,7 +216,7 @@
         <div class="container-fluid" id="romanceCategory">
 
             <!-- Category name -->
-            <div class="col text-center category-name">
+            <div class="col text-center category-name mt-5">
                 Romantic Fiction
             </div>
 
@@ -294,7 +295,7 @@
         <div class="container-fluid" id="fantasyCategory">
 
             <!-- Category name -->
-            <div class="col text-center category-name">
+            <div class="col text-center category-name mt-5">
                 Fantasy Fiction
             </div>
 
@@ -387,7 +388,7 @@
                                 <div class="book-content"></div>
                             </div>
                         </div>
-                        <div class="col-md-8 book-info"></div>
+                        <div class="col-md-8 book-info ps-5"></div>
                     </div>
                 </div>
 
@@ -422,7 +423,7 @@
                         <div class="col-md-3 d-flex justify-content-center">
                             <img src="Images/LogoWithoutBackground.png" height="450px" width="450px">
                         </div>
-                        <div class="col-md-8 book-info">
+                        <div class="col-md-8 guidelines ps-5">
                             Guidelines to rent book.
                         </div>
                     </div>
@@ -446,7 +447,8 @@
     <!-- jQuery library from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- External JavaScript file -->
+    <!-- External JavaScript files -->
+    <script src="navbar.js"></script>
     <script src="category.js"></script>
 
 </body>
