@@ -8,42 +8,6 @@ $(window).on('load', function () {
 
 });
 
-// Trigger fade-in and fade-out effect based on the viewport height
-$(document).ready(function () {
-
-    // Function to check if an element is in the viewport
-    function is70PercentInViewport(element) {
-        var rect = element.getBoundingClientRect();
-        var viewportHeight = window.innerHeight;
-        var elementHeight = rect.bottom - rect.top;
-
-        // 50% threshold
-        var threshold = 0.5;
-
-        return rect.bottom >= viewportHeight * (1 - threshold) && rect.top <= viewportHeight * threshold;
-    }
-
-    // Function to handle the fade-in effect
-    function handleFadeIn() {
-        $(".fade-in-section").each(function () {
-            if (is70PercentInViewport(this)) {
-                $(this).addClass("active");
-            } else {
-                $(this).removeClass("active");
-            }
-        });
-    }
-
-    // Trigger the fade-in effect on initial load
-    handleFadeIn();
-
-    // Trigger the fade-in effect when the user scrolls
-    $(window).on("scroll", function () {
-        handleFadeIn();
-    });
-
-});
-
 // Generate book container
 function generateBook(bookCoverSrc) {
     return `
@@ -64,19 +28,19 @@ function loopClassName(className, imagesrc) {
     }
 }
 
-loopClassName("romanceBook1", "Images/RomanceBookCover1.jpeg")
-loopClassName("romanceBook2", "Images/RomanceBookCover2.jpg")
-loopClassName("romanceBook3", "Images/RomanceBookCover3.webp")
-loopClassName("romanceBook4", "Images/RomanceBookCover4.webp")
-loopClassName("romanceBook5", "Images/RomanceBookCover5.webp")
-loopClassName("romanceBook6", "Images/RomanceBookCover6.webp")
+loopClassName("romanceBook1", "Media/RomanceBookCover1.jpeg")
+loopClassName("romanceBook2", "Media/RomanceBookCover2.jpg")
+loopClassName("romanceBook3", "Media/RomanceBookCover3.webp")
+loopClassName("romanceBook4", "Media/RomanceBookCover4.webp")
+loopClassName("romanceBook5", "Media/RomanceBookCover5.webp")
+loopClassName("romanceBook6", "Media/RomanceBookCover6.webp")
 
-loopClassName("fantasyBook1", "Images/FantasyBookCover1.jpeg")
-loopClassName("fantasyBook2", "Images/FantasyBookCover2.jpeg")
-loopClassName("fantasyBook3", "Images/FantasyBookCover3.webp")
-loopClassName("fantasyBook4", "Images/FantasyBookCover4.webp")
-loopClassName("fantasyBook5", "Images/FantasyBookCover5.webp")
-loopClassName("fantasyBook6", "Images/FantasyBookCover6.webp")
+loopClassName("fantasyBook1", "Media/FantasyBookCover1.jpeg")
+loopClassName("fantasyBook2", "Media/FantasyBookCover2.jpeg")
+loopClassName("fantasyBook3", "Media/FantasyBookCover3.webp")
+loopClassName("fantasyBook4", "Media/FantasyBookCover4.webp")
+loopClassName("fantasyBook5", "Media/FantasyBookCover5.webp")
+loopClassName("fantasyBook6", "Media/FantasyBookCover6.webp")
 
 // Open modal function
 function openModal(bookName, bookCoverSrc, bookInfo) {
@@ -115,19 +79,19 @@ function loopClassNameModal(className, bookName, bookCoverSrc, bookInfo) {
 
 }
 
-loopClassNameModal("romanceBook1", "Book Title", "Images/RomanceBookCover1.jpeg", "Description of book.")
-loopClassNameModal("romanceBook2", "Book Title", "Images/RomanceBookCover2.jpg", "Description of book.")
-loopClassNameModal("romanceBook3", "Book Title", "Images/RomanceBookCover3.webp", "Description of book.")
-loopClassNameModal("romanceBook4", "Book Title", "Images/RomanceBookCover4.webp", "Description of book.")
-loopClassNameModal("romanceBook5", "Book Title", "Images/RomanceBookCover5.webp", "Description of book.")
-loopClassNameModal("romanceBook6", "Book Title", "Images/RomanceBookCover6.webp", "Description of book.")
+loopClassNameModal("romanceBook1", "Book Title", "Media/RomanceBookCover1.jpeg", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("romanceBook2", "Book Title", "Media/RomanceBookCover2.jpg", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("romanceBook3", "Book Title", "Media/RomanceBookCover3.webp", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("romanceBook4", "Book Title", "Media/RomanceBookCover4.webp", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("romanceBook5", "Book Title", "Media/RomanceBookCover5.webp", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("romanceBook6", "Book Title", "Media/RomanceBookCover6.webp", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
 
-loopClassNameModal("fantasyBook1", "Book Title", "Images/FantasyBookCover1.jpeg", "Description of book.")
-loopClassNameModal("fantasyBook2", "Book Title", "Images/FantasyBookCover2.jpeg", "Description of book.")
-loopClassNameModal("fantasyBook3", "Book Title", "Images/FantasyBookCover3.webp", "Description of book.")
-loopClassNameModal("fantasyBook4", "Book Title", "Images/FantasyBookCover4.webp", "Description of book.")
-loopClassNameModal("fantasyBook5", "Book Title", "Images/FantasyBookCover5.webp", "Description of book.")
-loopClassNameModal("fantasyBook6", "Book Title", "Images/FantasyBookCover6.webp", "Description of book.")
+loopClassNameModal("fantasyBook1", "Book Title", "Media/FantasyBookCover1.jpeg", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("fantasyBook2", "Book Title", "Media/FantasyBookCover2.jpeg", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("fantasyBook3", "Book Title", "Media/FantasyBookCover3.webp", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("fantasyBook4", "Book Title", "Media/FantasyBookCover4.webp", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("fantasyBook5", "Book Title", "Media/FantasyBookCover5.webp", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
+loopClassNameModal("fantasyBook6", "Book Title", "Media/FantasyBookCover6.webp", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.")
 
 // Plus and minus clicks event listener
 document.addEventListener('DOMContentLoaded', function () {
