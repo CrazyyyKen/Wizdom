@@ -1,0 +1,116 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: radial-gradient(#fff, #EAE0D5, #C6AC8F); 
+    margin: 10px; /* Remove default margin */
+    padding: 20px;
+}
+
+.logo-container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 20vh; /* Set the logo container to occupy the full viewport height */
+}
+
+.logo-container img {
+max-width: 300px; /* Adjust the width of the logo as needed */
+height: 200px;
+width: 200px;
+
+}
+.user-bg-colour{
+    background-color: #eee4c0;
+    border: 2px solid #EAE0D5;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    transition: transform 0.8s ease-in-out, background-color 0.2s ease-in-out;
+    border-radius: 40px;
+}
+
+.user-bg-colour:hover:not(#missionVisionSection .section-column, #founderSection .section-column) {
+    transform: translateY(-20px) !important;
+    background-color: #C4A484;
+    border: 2px solid #C4A484;
+    
+    box-shadow: 0px 44px 35px 0px rgba(0, 0, 0, 0.8) ;
+}
+
+.user-profile-container {
+    background-color: #d8c581; 
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Style for the user profile image */
+.profile-image {
+    position: absolute;
+    width: 200px;
+    height: 180px;
+    border-radius: 60%;
+    border: 2px solid #ccc;
+}
+
+  
+.custom-link {
+    color: blue;
+    text-decoration: underline;
+}
+
+.custom-link:hover {
+    text-decoration: none;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column; /* Set the flex direction to column to stack the sections vertically */
+  max-height: 800px; /* Set the maximum height of the container */
+  margin-bottom: 20px;
+  margin-left: 100px;
+  
+  }
+
+.book-renting {
+    flex-basis: 60%;
+    padding: 50px;
+    border: 1px solid #ceb619;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-right:150px;
+}
+
+
+
+/* Styling for book rental history section */
+.book-history {
+    flex-basis: 60%;
+    padding: 50px;
+    border: 1px solid #ceb619;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right:150px;
+}
+
+/* Styling for the heading */
+h1 {
+    margin-top: 50px;
+}
+
+hr {
+    width: 90%;
+    margin: 30px auto;
+}
+
+table {
+border-collapse: collapse; 
+}
+
+/* Add padding to both table header cells and table data cells */
+table th, table td {
+    padding: 10px; 
+}
+/*increase the vertical gap between rows */
+table tbody tr {
+    margin-bottom: 15px;
+}
+
