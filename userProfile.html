@@ -5,237 +5,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-   
      <!-- CSS sources -->
-     <link href="styles.css" rel="stylesheet">
+     <link href="mystyle.css" rel="stylesheet">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-    <!-- Add your CSS styling here -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5eccd; /* Set the background color for the whole page */
-            margin: 100px; /* Remove default margin */
-            padding: 20px;
-        }
 
-        .logo-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 20vh; /* Set the logo container to occupy the full viewport height */
-        }
-
-        .logo-container img {
-        max-width: 300px; /* Adjust the width of the logo as needed */
-        height: 200px;
-        width: 200px;
-        
-        }
-        .user-bg-colour{
-            background-color: #eee4c0;
-            border: 2px solid #EAE0D5;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-            transition: transform 0.8s ease-in-out, background-color 0.2s ease-in-out;
-        }
-
-        .user-bg-colour:hover:not(#missionVisionSection .section-column, #founderSection .section-column) {
-            transform: translateY(-20px) !important;
-            background-color: #C4A484;
-            border: 2px solid #C4A484;
-            box-shadow: 0px 44px 35px 0px rgba(0, 0, 0, 0.8) ;
-        }
-
-
-        .user-profile-container {
-            background-color: #f5eccd; /* Set the background color of the user profile container to white */
-            padding: 20px;
-            border-radius: 10px;
-            position: relative;
-        }
-
-        /* Style for the user profile image */
-        .profile-image {
-            position: absolute;
-            top: 0px;
-            right: 70px;
-            width: 200px;
-            height: 180px;
-            border-radius: 60%;
-            border: 2px solid #ccc;
-        }
-
-        .custom-button {
-            background-color: #a0e585; /* Replace #ff0000 with your desired color code */
-            color: #304b36;
-            font-size: 15px; /* Set the font size of the button text */
-            border-radius: 5px;
-        }
-
-        .book-renting {
-            flex-basis: calc(50% - 10px); /* Adjust the width of the column */
-            padding: 10px;
-            border: 1px solid #ceb619;
-            border-radius: 5px;
-        }
-
-
-
-        /* Styling for book rental history section */
-        .book-history {
-            flex-basis: 50%; /* Adjust the width of the column */
-            padding: 10px;
-            border: 1px solid #ceb619;
-            border-radius: 5px;
-        }
-
-        /* Styling for the heading */
-        h1 {
-            margin-top: 50px;
-        }
-
-        hr {
-            width: 90%;
-            margin: 30px auto;
-        }
-
-        table {
-        border-collapse: collapse; 
-        }
-
-        /* Add padding to both table header cells and table data cells */
-        table th, table td {
-            padding: 10px; 
-        }
-        /*increase the vertical gap between rows */
-        table tbody tr {
-            margin-bottom: 15px;
-        }
-
-        /* Add more styles as needed */
-    </style>
 </head>
 
 <body>
+
     <div class="logo-container">
         <img src="LogoWithoutBackground.png" alt="Your Logo">
     </div>
     <hr>
 
-    <div>
-        <h1 class="heading"><strong>User Profile</strong></h1>
-
-        <div class="user-profile-container" >
-            <div class="shadow p-3 mb-5 user-bg-colour rounded">
-                <div>
-                    <h2><strong>User Information</strong></h2>
-                    <p><strong>Name:</strong> Soon</p>
-                    <p><strong>Email:</strong> soon@example.com</p>
-                    <p><strong>Phone:</strong> +60 12-456-7890</p>
-
-                    <!-- Button trigger modal -->
-
-                    <button type="button" class="btn custom-button btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Change password
-                    </button>
-                
-                </div>
+    <div class = "container">
+        <div class="row justify-content-around">
+            <div class="col-2">
                 <img class="profile-image" src="irene.jpg" alt="User Profile Image">
-        </div>
-            <div class="shadow p-3 mb-5 user-bg-colour rounded">
-                <h2><strong>Books Currently Renting</strong></h2>
-                <ul>
-                    <li>Book 1</li>
-                    <li>Book 2</li>
-                    <!-- Add more books as needed -->
-                </ul>
+                <br><br><br><br><br><br><br><br><br>
+                <a href="#current">Current Renting</a><br>
+                <a href="#history">Renting History</a><br>
+                <!-- Button trigger modal -->
+                <a href="#" class="custom-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Change password
+                </a>
             </div>
+            
+         
+            <div class="col-9">
+                    <div class="shadow p-3 mb-5 user-bg-colour rounded">
+                        <div>
+                            <h2><strong>User Information</strong></h2>
+                            <p><strong>Name:</strong> Soon</p>
+                            <p><strong>Email:</strong> soon@example.com</p>
+                            <p><strong>Phone:</strong> +60 12-456-7890</p>
+
+                            
+                            <h2><strong>Books Currently Renting</strong></h2>
+                            <ul>
+                                <li>Book 1</li>
+                                <li>Book 2</li>
+                                <!-- Add more books as needed -->
+                            </ul>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            
+    </div>           
+
+    <div class="info-container">
+        <div class = "book-renting">
+            <h2><a id="current">Current Renting</a></h2><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book</th>
+                        <th>Rental Date</th>
+                        <th>Return Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Book 1</td>
+                        <td>2023-07-15</td>
+                        <td>2023-07-22</td>
+                    </tr>
+                    <tr>
+                        <td>Book 2</td>
+                        <td>2023-07-18</td>
+                        <td>2023-07-25</td>
+                    </tr>
+                    <!-- Add more rental history rows as needed -->
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="book-history">
+            <h2><a id="history">Rental History</a></h2><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book</th>
+                        <th>Rental Date</th>
+                        <th>Return Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Book 3</td>
+                        <td>2023-07-10</td>
+                        <td>2023-07-15</td>
+                    </tr>
+                    <tr>
+                        <td>Book 4</td>
+                        <td>2023-07-05</td>
+                        <td>2023-07-12</td>
+                    </tr>
+                    <tr>
+                        <td>Book 5</td>
+                        <td>2023-07-05</td>
+                        <td>2023-07-12</td>
+                    </tr>
+                    <tr>
+                        <td>Book 6</td>
+                        <td>2023-07-05</td>
+                        <td>2023-07-12</td>
+                    </tr>
+                    <tr>
+                        <td>Book 7</td>
+                        <td>2023-07-05</td>
+                        <td>2023-07-12</td>
+                    </tr>
+                    <!-- Add more rental history rows as needed -->
+                </tbody>
+            </table>
+        </div>
     </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class = "col">
-                    <div class = "book-renting">
-                        <h2>Rental History</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Book</th>
-                                    <th>Rental Date</th>
-                                    <th>Return Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Book 1</td>
-                                    <td>2023-07-15</td>
-                                    <td>2023-07-22</td>
-                                </tr>
-                                <tr>
-                                    <td>Book 2</td>
-                                    <td>2023-07-18</td>
-                                    <td>2023-07-25</td>
-                                </tr>
-                                <!-- Add more rental history rows as needed -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-           
 
-                <div class="col">
-                    <div class="book-history">
-                        <h2>Book Rental History</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Book</th>
-                                    <th>Rental Date</th>
-                                    <th>Return Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Book 3</td>
-                                    <td>2023-07-10</td>
-                                    <td>2023-07-15</td>
-                                </tr>
-                                <tr>
-                                    <td>Book 4</td>
-                                    <td>2023-07-05</td>
-                                    <td>2023-07-12</td>
-                                </tr>
-                                <!-- Add more rental history rows as needed -->
-                            </tbody>
-                        </table>
-                    </div>
+    <!-- Modal for change passowrd (cannot save change yet)-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Password Here</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-3">change password</p>
+                    <label for="newPwd">New Password:</label>
+                    <input type="password" id="newPwd" name="newPwd" minlength="8"><br><br>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
-            <!-- Add more user profile sections as needed -->
         </div>
-
-        <!-- Modal for change passowrd (cannot save change yet)-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Change Password Here</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="fs-3">change password</p>
-                        <label for="newPwd">New Password:</label>
-                        <input type="password" id="newPwd" name="newPwd" minlength="8"><br><br>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>       
+    </div>       
         
     <!-- JavaScripts -->
     <!-- Bootstrap 5 JavaScript library -->
