@@ -1,19 +1,9 @@
-// Show modal on page load
-$(window).on('load', function () {
-
-    // 1000 milliseconds (1 second) delay before showing the modal
-    setTimeout(function () {
-        $('#guideModal').modal('show');
-    }, 800);
-
-});
-
 // Generate book container
 function generateBook(bookCoverSrc) {
     return `
         <div class="book" style="cursor: pointer;">
             <div class="book-cover">
-                <img src="${bookCoverSrc}" style="height: 100%; width: 100%;">
+                <img src="${bookCoverSrc}" style="height: 100%; width: 100%;" class="img-fluid">
             </div>
             <div class="book-content"></div>
         </div>
@@ -125,3 +115,38 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+window.sr = ScrollReveal();
+sr.reveal('#exploreSection .section-title, #romanceSection .section-title, #fantasySection .section-title', {
+  duration: 1200,
+  origin: 'top',
+  distance: '130px',
+  viewFactor: 0.3,
+  reset: true, // Set this to true to repeat the animation
+  interval: 1000, // Set the delay between repeats in milliseconds (optional)
+});
+sr.reveal('#exploreSection .section-info, #romanceSection .section-info, #fantasySection .section-info', {
+    duration: 1200,
+    origin: 'top',
+    distance: '150px',
+    viewFactor: 0.3,
+    reset: true, // Set this to true to repeat the animation
+    interval: 1000, // Set the delay between repeats in milliseconds (optional)
+  });
+sr.reveal('#exploreSection .book-carousel, #romanceSection .book-carousel, #fantasySection .book-carousel', {
+    duration: 1200,
+    origin: 'top',
+    distance: '100px',
+    viewFactor: 0.3,
+    reset: true, // Set this to true to repeat the animation
+    interval: 1000, // Set the delay between repeats in milliseconds (optional)
+  });
+
+  sr.reveal('#exploreSection .home-btn, #romanceSection .home-btn, #fantasySection .home-btn', {
+    duration: 1200,
+    origin: 'top',
+    distance: '50px',
+    viewFactor: 0.3,
+    reset: true, // Set this to true to repeat the animation
+    interval: 1000, // Set the delay between repeats in milliseconds (optional)
+  });

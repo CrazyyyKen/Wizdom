@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Website title and favicon -->
+    <title>Sign In | Wizdom</title>
+    <link rel="icon" type="image/x-icon" href="Media/Logo.png">
+
+    <!-- CSS sources -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    </head>
+
+<body>
+
+    <section class="section fade-in-section" style="background-image: radial-gradient(circle, #F5F2EA, #EAE0D5, #D0C7C2, #C6AC8F, #896B60); background-color: #EAE0D5;">
+        <div class="container-fluid">
+
+            <div class="col-md-7 mx-auto"  id="signInSection">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-5">
+                        <img src="Media/LogoWithoutBackground.png" height="400px" width="400px">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-12 text-center section-title pb-3">
+                            Sign In
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control text-start" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="password" class="form-control text-start" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword"s>
+                                    Password
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <a href="home.html">
+                                <button type="button" class="btn home-btn mt-3">
+                                    Sign in
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-md-12 pt-3 pb-3 text-center section-info">
+                            Don't have an account?
+                            <a href="#" id="signUpLink">
+                                Sign up
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-7 mx-auto" id="signUpSection"
+                style="opacity: 0; display: none;">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-5">
+                        <img src="Media/LogoWithoutBackground.png" height="400px" width="400px">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-12 text-center section-title pb-3">
+                            Sign Up
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control text-start" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                <label for="floatingInput">Username</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control text-start" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="password" class="form-control text-start" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">
+                                    Password
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <a href="#">
+                                <button type="button" class="btn home-btn mt-3">
+                                    Sign up
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-md-12 pt-3 pb-3 text-center section-info">
+                            Already have an account?
+                            <a href="#" id="signInLink">
+                                Sign in
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- JavaScripts -->
+    <!-- Bootstrap 5 JavaScript library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery library from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="styles.js"></script>
+    <script src="login.js"></script>
+
+</body>
+
+</html>

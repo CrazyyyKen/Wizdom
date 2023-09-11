@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Website title and favicon -->
+    <title>FAQ | Wizdom</title>
+    <link rel="icon" type="image/x-icon" href="Media/Logo.png">
+
+    <!-- CSS sources -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <section id="navigation-bar">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light" id="navbar">
+            <div class="container-fluid" style="width: 90%;">
+
+                <!-- Website logo and name -->
+                <a class="navbar-brand" href="#">
+                    <img src="Media/Logo.png" alt="WizdomLogo" height="50px" width="50px">
+                </a>
+                <a class="navbar-brand fw-bold" href="#">Wizdom</a>
+
+                <!-- Button that toggles the collapsible navigation menu -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <div class="navbar-nav ms-auto">
+
+                        <a class="nav-link" aria-current="page" href="home.html">
+                            Home
+                        </a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="categories.html#exploreSection">
+                                        Explore our Collection
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="categories.html#romanceSection">
+                                        Romantic Fiction
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="categories.html#fantasySection">
+                                        Fantasy Fiction
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <a class="nav-link" href="howitworks.html">
+                            How It Works
+                        </a>
+
+                        <a class="nav-link" href="about.html">
+                            About Us
+                        </a>
+
+                        <a class="nav-link active" href="#">
+                            FAQ
+                        </a>
+
+                        <a class="nav-link" href="contactus.html">
+                            Contact Us
+                        </a>
+
+                    </div>
+
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" aria-current="page" href="bag.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag mb-1 me-1" viewBox="0 0 16 16">
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                              </svg>
+                            My Bag
+                        </a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Profile
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        View my Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+
+
+    <section class="section fade-in-section" id="faqWelcomeSection">
+        <div class="container-fluid">
+            <div class="col text-center section-title mb-3">
+                Frequently Asked Questions
+            </div>
+            <div class="col text-center section-info">
+                Click anywhere to continue
+            </div>
+        </div>
+    </section>
+    <section class="section fade-in-section align-items-start overflow-auto"
+        style=" background-color: #EAE0D5;opacity: 0; display: none;" id="faqSection">
+        <div class="container-fluid pb-5">
+            <div class="col-md-10 mx-auto section-title mt-3 mb-3">
+                Frequently Asked Questions
+            </div>
+            <div class="row col-md-10 mx-auto mt-3 faq-column" style="cursor: pointer;" id="question1"
+                data-bs-toggle="collapse" href="#answer1" aria-expanded="false" aria-controls="answer1">
+
+                <div class="col-md-11 section-info question-column">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+                </div>
+
+                <div class="col-md-1 ms-auto my-auto text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-caret-right-fill arrow" viewBox="0 0 16 16">
+                        <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </div>
+
+            </div>
+            <div class="col-md-10 mx-auto collapse answer-column" id="answer1">
+                <div class="col-md-11 ps-3 section-info">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+
+                </div>
+            </div>
+            <div class="row col-md-10 mx-auto mt-3 faq-column" style="cursor: pointer;" id="question2"
+                data-bs-toggle="collapse" href="#answer2" aria-expanded="false" aria-controls="answer2">
+
+                <div class="col-md-11 section-info question-column">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+                </div>
+
+                <div class="col-md-1 ms-auto my-auto text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-caret-right-fill arrow" viewBox="0 0 16 16">
+                        <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </div>
+
+            </div>
+            <div class="col-md-10 mx-auto collapse answer-column" id="answer2">
+                <div class="col-md-11 ps-3 section-info">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+
+                </div>
+            </div>
+            <div class="row col-md-10 mx-auto mt-3 faq-column" style="cursor: pointer;" id="question3"
+                data-bs-toggle="collapse" href="#answer3" aria-expanded="false" aria-controls="answer3">
+
+                <div class="col-md-11 section-info question-column">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+                </div>
+
+                <div class="col-md-1 ms-auto my-auto text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-caret-right-fill arrow" viewBox="0 0 16 16">
+                        <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </div>
+
+            </div>
+            <div class="col-md-10 mx-auto collapse answer-column" id="answer3">
+                <div class="col-md-11 ps-3 section-info">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+
+                </div>
+            </div>
+            <div class="row col-md-10 mx-auto mt-3 faq-column" style="cursor: pointer;" id="question4"
+                data-bs-toggle="collapse" href="#answer4" aria-expanded="false" aria-controls="answer4">
+
+                <div class="col-md-11 section-info question-column">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+                </div>
+
+                <div class="col-md-1 ms-auto my-auto text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-caret-right-fill arrow" viewBox="0 0 16 16">
+                        <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </div>
+
+            </div>
+            <div class="col-md-10 mx-auto collapse answer-column" id="answer4">
+                <div class="col-md-11 ps-3 section-info">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+
+                </div>
+            </div>
+            <div class="row col-md-10 mx-auto mt-3 faq-column" style="cursor: pointer;" id="question5"
+                data-bs-toggle="collapse" href="#answer5" aria-expanded="false" aria-controls="answer5">
+
+                <div class="col-md-11 section-info question-column">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+                </div>
+
+                <div class="col-md-1 ms-auto my-auto text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-caret-right-fill arrow" viewBox="0 0 16 16">
+                        <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </div>
+
+            </div>
+            <div class="col-md-10 mx-auto collapse answer-column" id="answer5">
+                <div class="col-md-11 ps-3 section-info">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem.
+
+                </div>
+            </div>
+
+            <div class="col-md-10 mt-5 mx-auto text-center section-info contact-us-column">
+                Any further inquiries? <a href="contactus.html" id="contactUsLink">
+                    Contact us
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!-- JavaScripts -->
+    <!-- Bootstrap 5 JavaScript library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery library from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- External JavaScript files -->
+    <script src="navbar.js"></script>
+    <script src="scrollreveal.min.js"></script>
+
+    <script src="styles.js"></script>
+
+    <script src="faq.js"></script>
+
+</body>
+
+</html>

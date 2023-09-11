@@ -7,8 +7,8 @@ $(document).ready(function () {
         var viewportHeight = window.innerHeight;
         var elementHeight = rect.bottom - rect.top;
 
-        // 50% threshold
-        var threshold = 0.5;
+        // 80% threshold
+        var threshold = 0.9;
 
         return rect.bottom >= viewportHeight * (1 - threshold) && rect.top <= viewportHeight * threshold;
     }
