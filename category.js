@@ -1,10 +1,21 @@
-// Function to fetch book data from the JSON file
-function fetchBookData(callback) {
-    fetch('json/books.json') // Replace 'books.json' with the correct path to your JSON file
+function fetchBookData(jsonUrl, callback) {
+    fetch(jsonUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
         .then(response => response.json())
         .then(data => callback(data))
         .catch(error => console.error('Error fetching book data:', error));
 }
+
+const jsonUrl = 'https://example.com/path/to/your/api/books'; // Replace with your API endpoint URL
+
+fetchBookData(jsonUrl, data => {
+    // Handle the retrieved data here
+    console.log(data);
+});
 
 // Generate book container
 function generateBook(bookData, bookDescription) {
