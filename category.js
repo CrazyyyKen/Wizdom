@@ -10,7 +10,7 @@ function fetchBookData(jsonUrl, callback) {
         .catch(error => console.error('Error fetching book data:', error));
 }
 
-const jsonUrl = 'https://example.com/path/to/your/api/books'; // Replace with your API endpoint URL
+const jsonUrl = 'https://raw.githubusercontent.com/CrazyyyKen/Wizdom/main/json/books.json'; // Replace with your API endpoint URL
 
 fetchBookData(jsonUrl, data => {
     // Handle the retrieved data here
