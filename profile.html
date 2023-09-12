@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Website title and favicon -->
-    <title>My Bag | Wizdom</title>
+    <title>My Profile | Wizdom</title>
     <link rel="icon" type="image/x-icon" href="media/Logo.png">
 
     <!-- CSS sources -->
@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <!-- Navigation bar -->
     <section id="navigation-bar">
         <nav class="navbar fixed-top navbar-expand-lg navbar-light" id="navbar">
             <div class="container-fluid" style="width: 90%;">
@@ -86,7 +85,7 @@
                     </div>
 
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link" aria-current="page" href="bag.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-bag mb-1 me-1" viewBox="0 0 16 16">
                                 <path
@@ -96,13 +95,13 @@
                         </a>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Profile
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
-                                    <a class="dropdown-item" href="profile.html">
+                                    <a class="dropdown-item" href="#">
                                         View my Profile
                                     </a>
                                 </li>
@@ -121,19 +120,46 @@
     </section>
 
 
-    <section class="section align-items-start fade-in-section overflow-auto"
-        style=" background-color: #EAE0D5; padding-top: 80px; ">
+    <section class="section align-items-start fade-in-section"
+        style=" background-color: #EAE0D5; padding-top: 80px; height: 100%;">
         <div class="container-fluid pb-5">
             <div class="col-md-10 mx-auto section-title mt-3 mb-3">
-                My Bag
+                My Profile
+            </div>
+
+
+                <div class="row justify-content-center align-items-center mb-5">
+                    <img src="media/Logo.png" class="rounded-circle mt-2 img-fluid"
+                        style="height: 300px; width: 300px; border: 1px solid #D3D3D3; background-color: #F5F2EA;">
+                    <div class="col-md-7">
+                        <div class="col-md-12 ps-5 py-5" style="background-color: #F5F2EA;">
+                            <div class="col-md-12 section-info text-start">
+                                Lorem ipsum dolor sit amet consectetuer adipiscing
+                                elit
+                            </div>
+                            <div class="col-md-12 section-info text-start mt-3">
+                                Lorem ipsum dolor sit amet consectetuer adipiscing
+                                elit
+                            </div>
+                            <div class="col-md-12 section-info text-start mt-3">
+                                Lorem ipsum dolor sit amet consectetuer adipiscing
+                                elit
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            <div class="col-md-10 mx-auto section-title mt-3 mb-3">
+                Book Rental History
             </div>
 
             <div class="table-responsive col-md-10 mx-auto" style="background-color: #F5F2EA; border: 1px solid #D3D3D3;">
 
-                <table class="table table-hover section-info text-center">
+                <table class="table table-hover section-info">
                     <thead>
                         <tr>
-                            <th scope="col" class="">#</th>
+                            <th scope="col">#</th>
                             <th scope="col">Book Name</th>
                             <th scope="col">Book Description</th>
                             <th scope="col">Price</th>
@@ -146,6 +172,7 @@
                             <td></td>
                             <td>Otto</td>
                             <td>@mdo</td>
+                            <td>@mdo</td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
@@ -154,70 +181,21 @@
                             <td>@fat</td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td><button type="button" class="btn home-btn">
-                                Remove
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td colspan="2" class="text-end pe-5">Grand Total</td>
-                            <td>@fat</td>
-                            <td><button type="button" class="btn home-btn" data-bs-toggle="modal" data-bs-target="#checkOutModal">
-                                Checkout
-                            </button></td>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
                         </tr>
                         
                     </tbody>
                 </table>
-
-            </div>
-
-            <div class="col-md-10 mx-auto" style="background-color: #F5F2EA; border: 1px solid #D3D3D3;">
-                
             </div>
         </div>
 
     </section>
-    <!-- Modal to display guidelines -->
-    <div class="modal fade modal-zoom" id="checkOutModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
 
-                <!-- Modal title -->
-                <div class="modal-header text-center">
-                    <h5 class="modal-title" style="width: 100%;" id="ModalLabel">Rules and Regulations</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
 
-                <!-- Modal content -->
-                <div class="modal-body">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 d-flex justify-content-center">
-                            <img src="media/LogoWithoutBackground.png" height="350px" width="350px">
-                        </div>
-                        <div class="col-md-8 ps-5 pe-5">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.Lorem
-                            ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                            massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got It</button>
-                </div>
 
-            </div>
-        </div>
-    </div>
 
     <!-- JavaScripts -->
     <!-- Bootstrap 5 JavaScript library -->
@@ -233,8 +211,6 @@
     <script src="scrollreveal.min.js"></script>
 
     <script src="styles.js"></script>
-
-
 </body>
 
 </html>

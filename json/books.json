@@ -1,0 +1,66 @@
+{
+    "historyBooks": [
+        {
+            "name": "President Garfield: From Radical to Unifier",
+            "coverSrc": "media/1. President Garfield- From Radical to Unifier.jpg",
+            "description": "President Garfield is American history at its finest. It is about an impoverished boy working his way from the frontier to the Presidency; a progressive statesman, trying to raise a more righteous, peaceful Republic out of the ashes of civil war; the tragically imperfect course of that reformation, and the man himself; a martyr-President, whose death succeeded in nudging the country back to cleaner, calmer politics."
+        },
+        {
+            "name": "reMade in America: An Immigrant’s Journey to the American Dream",
+            "coverSrc": "media/2. reMade in America- An Immigrant’s Journey to the American Dream.jpg",
+            "description": "Pardis Mahdavi chases the legacy of Caspian horses and the women whose lives are saved by them, drawing on decades of research, newly-discovered diaries, and exclusive military sources. Among those intersecting stories is that of American Louise Firouz, who helped bring the breed back from the brink of extinction, connecting Virginia traders to British royals to the son of the Shah. Firouz’s life is forever changed when she meets Mahdavi’s own family, who run an unusual smuggling operation in addition to raising horses in a wild bid for freedom."
+        },
+        {
+            "name": "The War Came to Us: Life and Death in Ukraine",
+            "coverSrc": "media/3. The War Came to Us- Life and Death in Ukraine.jpg",
+            "description": "When Russian President Vladimir Putin launched his unprovoked, full-scale invasion of Ukraine just before dawn on 24 February 2022, it marked his latest and most overt attempt to brutally conquer the country, and reshaped the world order. Christopher Miller, the Ukraine correspondent for the Financial Times and the foremost journalist covering the country, was there on the ground when the first Russian missiles struck and troops stormed over the border. But the seeds of Russia's war against Ukraine and the West were sown more than a decade earlier."
+        },
+        {
+            "name": "A Most Tolerant Little Town: The Explosive Beginning of School Desegregation",
+            "coverSrc": "media/4. A Most Tolerant Little Town- The Explosive Beginning of School Desegregation.jpg",
+            "description": "In A Most Tolerant Little Town , Rachel Martin weaves together over a dozen perspectives in a kaleidoscopic portrait of a small town living through a tumultuous turning point for America. The result is a spellbinding mystery, a riveting piece of forgotten civil rights history, and a poignant reminder of the toll on those who stand on the frontlines of social change."
+        },
+        {
+            "name": "Bismarck's War: The Franco-Prussian War and the Making of Modern Europe",
+            "coverSrc": "media/5. Bismarck's War- The Franco-Prussian War and the Making of Modern Europe.jpg",
+            "description": "Bismarck's War tells the story of one of the most shocking reversals of fortune in modern European history. The culmination of a globally violent decade, the Franco-Prussian War was deliberately engineered by Bismarck, both to destroy French power and to unite Germany. It could not have worked better, but it also had lurking inside it the poisonous seeds of all the disasters that would ravage the twentieth century."
+        },
+        {
+            "name": "Spies: The Epic Intelligence War Between East and West",
+            "coverSrc": "media/6. Spies- The Epic Intelligence War Between East and West.jpg",
+            "description": "Spies is the history of the secret war that Russia has been waging against the West for a century. Espionage, sabotage, and subversion were the Kremlin’s means to equalize the imbalance of resources between the East and West before, during, and after the Cold War. There was nothing “unprecedented” about Russian meddling in the 2016 US presidential election. It was simply business as usual, new means used for old ends."
+        }
+    ],
+    "thrillerBooks": [
+        {
+            "name": "The Militia House",
+            "coverSrc": "media/1. The Militia House.jpg",
+            "description": "It’s 2010, and the recently promoted Corporal Loyette and his unit are finishing up their deployment at a new base in Kajaki, Afghanistan. Their duties here are straightforward―loading and unloading cargo into and out of helicopters―and their days are a mix of boredom and dread. The Brits they’re replacing delight in telling them the history of the old barracks just off base, a Soviet-era militia house they claim is haunted, and Loyette and his men don’t need much convincing to make a clandestine trip outside the wire to explore it."
+        },
+        {
+            "name": "Doomsday Match",
+            "coverSrc": "media/2. Doomsday Match.jpg",
+            "description": "Villa Sara de Calakmul, owned by mysterious tycoon Jacob Calakmul, is more isolated compound than private resort. Armed guards patrol the jungle perimeters. Pictures of previous guests—long disappeared—adorn the walls. And there are whispers of something coming called “the game.” Even in the sweltering heat, the Roths feel a chill—and the fear that they haven’t been invited to Villa Sara. They’ve been lured. But for what purpose? And to what end?"
+        },
+        {
+            "name": "The Stolen Coast",
+            "coverSrc": "media/3. The Stolen Coast.jpg",
+            "description": "Jack might be a polished, Harvard-educated lawyer on paper, but everyone in the down-at-the-heels, if picturesque, village of Onset, Massachusetts, knows his real job: moving people on the run from powerful enemies. The family business--co-managed with his father, a retired spy--is smooth sailing, as they fill up Onset's holiday homes during the town's long, drowsy off-season and help clients shed their identities in preparation for fresh starts."
+        },
+        {
+            "name": "A Guide to the Dark",
+            "coverSrc": "media/4. A Guide to the Dark.jpg",
+            "description": "Layla doesn't see him. Or notice anything suspicious about Room 9. The place may be a little run down, but it has a certain charm she can’t wait to capture on camera. If Layla is being honest, she’s too preoccupied with confusing feelings for Mira to see much else. But when they learn eight people died in that same room, they realize there must be a connection between the deaths and the unexplainable things that keep happening inside it. They just have to find the connection before Mira becomes the ninth."
+        },
+        {
+            "name": "Her, Too",
+            "coverSrc": "media/5. Her, Too.jpg",
+            "description": "Kelly McCann is a fighter. She's fought to build a successful legal career, fought for the special needs of her family, and tirelessly fought for her clients. Her specialty is defending men accused of sex crimes--falsely accused, she always maintains. Her detractors call her a traitor to her gender, but she doesn't care. Badass and brilliant, Kelly simply loves to win, and as the story opens, she's done it again, securing an acquittal for a renowned scientist accused of sexually assaulting his female employees."
+        },
+        {
+            "name": "The Hunt",
+            "coverSrc": "media/6. The Hunt.jpg",
+            "description": "For seventeen years, a serial murderer has used the Presley, Arkansas, Annual Hunt for the Golden Egg to find prey. Or at least that’s what some people believe. Others, like the town’s devoted “Eggheads,” relish the tradition and think the deaths are just unfortunate accidents. But for Nell Holcomb, the town’s annual Hunt dredges up a particularly painful memory: her brother’s death, long believed to be “the Hunter’s” first kill."
+        }
+    ]
+}

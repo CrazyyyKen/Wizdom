@@ -1,7 +1,7 @@
 /* Import font from external source */
 @font-face {
 	font-family: Gidole;
-	src: url(Fonts/Gidole-Regular.otf);
+	src: url(fonts/Gidole-Regular.otf);
 }
 
 body {
@@ -10,6 +10,8 @@ body {
 /* Add this CSS to your styles.css file or a custom CSS file */
 #navbarSupportedContent {
     background-color: #fff; /* Replace 'your-color-here' with your desired background color */
+	transition: background-color 0.2s ease-in-out;
+
 }
 
 #contactSection1 .section-column{
@@ -36,9 +38,6 @@ body {
 	background-color: #fff;
   }
  
-#founder1, #founder2, #founder3, #founder4{
-	height: 60vh;
-}
 #founder1 img, #founder2 img, #founder3 img, #founder4 img{
 	height: 250px;
 	width: 250px;
@@ -134,7 +133,9 @@ body {
 	width: 100%;
 	height: 100vh;
 	padding-top: 80px;
+
 }
+
 
 .navbar {
 	height: 80px;
@@ -206,6 +207,8 @@ body {
 /* Navbar color when scrolled */
 .navbar-scrolled, .navbar-scrolled .dropdown-menu, .navbar-scrolled #navbarSupportedContent  , .navbar-scrolled .dropdown-menu #navbarSupportedContent  {
 	background-color: #4A332D;
+	transition: background-color 0.2s ease-in-out;
+
 }
 
 /* Navs color when scrolled */
@@ -236,7 +239,7 @@ body {
 	color: #000000;
 }
 
-#romanceSection .section-title, #romanceSection .section-info{
+#historySection .section-title, #historySection .section-info{
 	color: #fff;
 }
 #exploreWebSection .section-title {
