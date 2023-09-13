@@ -1,21 +1,15 @@
-function fetchBookData(jsonUrl, callback) {
-    fetch(jsonUrl, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+// Function to fetch book data from the JSON file using a RESTful API
+function fetchBookData(callback) {
+    const githubRawUrl = "https://raw.githubusercontent.com/CrazyyyKen/Wizdom/main/json/books.json";
+
+    fetch(githubRawUrl, {
+        method: 'GET'
     })
         .then(response => response.json())
         .then(data => callback(data))
         .catch(error => console.error('Error fetching book data:', error));
+
 }
-
-const jsonUrl = 'https://raw.githubusercontent.com/CrazyyyKen/Wizdom/main/json/books.json'; // Replace with your API endpoint URL
-
-fetchBookData(jsonUrl, data => {
-    // Handle the retrieved data here
-    console.log(data);
-});
 
 // Generate book container
 function generateBook(bookData, bookDescription) {
