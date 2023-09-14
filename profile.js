@@ -8,6 +8,56 @@ function getUserKey() {
     return null; // Return null if userData is not found in session storage
 } 
 
+// Function to calculate the total books rented from the user's history
+function calculateTotalBooksRented() {
+    const userKey = getUserKey(); // Get the user's key (email) from session storage
+    const userHistoryKey = `${userKey}_history`; // Create the key for user's history in local storage
+
+    // Retrieve the user's history from local storage
+    const userHistoryJSON = localStorage.getItem(userHistoryKey);
+
+    if (userHistoryJSON) {
+        const userHistory = JSON.parse(userHistoryJSON);
+
+        // Calculate the total books rented
+        let totalBooksRented = 0;
+        userHistory.forEach((rentalInfo) => {
+            totalBooksRented += rentalInfo.books.length;
+        });
+
+        // Display the total books rented in section-info
+        const totalRentalElement = document.querySelector("#totalRental");
+        totalRentalElement.textContent = `Total Books Rented: ${totalBooksRented}`;
+    }
+}
+
+// Function to retrieve and display the username and email from local storage
+function displayUserData() {
+    const userKey = getUserKey(); // Get the user's key (email) from session storage
+
+    // Retrieve the user data array from local storage
+    const userDataArrayJSON = localStorage.getItem("userDataArray");
+
+    if (userDataArrayJSON) {
+        const userDataArray = JSON.parse(userDataArrayJSON);
+
+        // Find the user data with the matching email
+        const userData = userDataArray.find((data) => data.email === userKey);
+
+        if (userData) {
+            // Display the username and email
+            const usernameElement = document.querySelector("#username");
+            usernameElement.textContent += `\nUsername: ${userData.username}`;
+            const emailElement = document.querySelector("#email");
+            emailElement.textContent += `Email: ${userData.email}`;
+        }
+    }
+}
+
+// Call the functions to calculate total books rented and display user data
+calculateTotalBooksRented();
+displayUserData();
+
 // Function to display user's rental history in the table
 function displayRentalHistory() {
     const userKey = getUserKey();
