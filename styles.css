@@ -364,54 +364,7 @@ span {
     }
 }
 
-/* Responsive styles for different screen sizes */
-@media (max-width: 575px) {
-    /* X-Small screens */
-    .bookshelf {
-        margin-left: 10px; /* Adjust the left margin for X-Small screens */
-        margin-top: -5px; /* Adjust the top margin for X-Small screens */
-    }
-}
 
-@media (min-width: 576px) {
-    /* Small screens and larger */
-    .bookshelf {
-        margin-left: 50px; /* Adjust the left margin for Small and larger screens */
-        margin-top: -15px; /* Adjust the top margin for Small and larger screens */
-    }
-}
-
-@media (min-width: 768px) {
-    /* Medium screens and larger */
-    .bookshelf {
-        margin-left: 100px; /* Adjust the left margin for Medium and larger screens */
-        margin-top: -20px; /* Adjust the top margin for Medium and larger screens */
-    }
-}
-
-@media (min-width: 992px) {
-    /* Large screens and larger */
-    .bookshelf {
-        margin-left: 150px; /* Adjust the left margin for Large and larger screens */
-        margin-top: -25px; /* Adjust the top margin for Large and larger screens */
-    }
-}
-
-@media (min-width: 1200px) {
-    /* Extra Large screens and larger */
-    .bookshelf {
-        margin-left: 200px; /* Adjust the left margin for Extra Large and larger screens */
-        margin-top: -30px; /* Adjust the top margin for Extra Large and larger screens */
-    }
-}
-
-@media (min-width: 1400px) {
-    /* Extra Extra Large screens and larger */
-    .bookshelf {
-        margin-left: 250px; /* Adjust the left margin for Extra Extra Large and larger screens */
-        margin-top: -35px; /* Adjust the top margin for Extra Extra Large and larger screens */
-    }
-}
 
 
 
