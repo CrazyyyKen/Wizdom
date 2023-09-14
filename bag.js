@@ -71,14 +71,14 @@ function removeBookFromTableAndStorage(index) {
     }
 }
 
-// Event listener for the "Remove" buttons
-document.querySelector(".table tbody").addEventListener("click", (event) => {
+// Event delegation for the "Remove" buttons
+document.querySelector(".table #bagTableBody").addEventListener("click", (event) => {
     if (event.target.classList.contains("remove-button")) {
         const index = event.target.getAttribute("data-index");
         removeBookFromTableAndStorage(index);
     }
 });
-// Import jsPDF library
+
 
 // Add event listener to the "Checkout" button
 const checkoutButton = document.querySelector(".checkout-button");
