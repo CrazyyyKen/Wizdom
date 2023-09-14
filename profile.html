@@ -132,16 +132,26 @@
                     <img src="Media/Logo.png" class="rounded-circle mt-2 img-fluid"
                         style="height: 300px; width: 300px; border: 1px solid #D3D3D3; background-color: #fff;">
                     <div class="col-md-7">
-                        <div class="col-md-12 ps-5 py-5" style="background-color: #fff;">
-                            <div class="col-md-12 section-info text-start" id="username">
-                                
-                            </div>
-                            <div class="col-md-12 section-info text-start mt-3" id="email">
-                                
-                            </div>
-                            <div class="col-md-12 section-info text-start mt-3" id="totalRental">
-                                
-                            </div>
+                        <div class="table-responsive col-md-8 ms-5" style="background-color: #fff; border: 1px solid #D3D3D3;" id="userInfo">
+                            <table class="table table-hover section-info">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" style="width: 40%;">Username</th>
+                                        <td scope="row" style="width: 40%;" id="username"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email Address</th>
+                                        <td scope="row" id="email"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Total Number of Books Rented</th>
+                                        <td scope="row" id="totalBooksRented"></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         
                     </div>
@@ -151,7 +161,7 @@
                 Book Rental History
             </div>
 
-            <div class="table-responsive col-md-10 mx-auto" style="background-color: #fff; border: 1px solid #D3D3D3;">
+            <div class="table-responsive col-md-10 mx-auto" style="background-color: #fff; border: 1px solid #D3D3D3;" id="bookRentalHistory">
 
                 <table class="table table-hover section-info">
                     <thead>

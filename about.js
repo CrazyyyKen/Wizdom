@@ -86,14 +86,26 @@
     });
   
     
-    // Add other ScrollReveal animations for other elements as needed
+// Function to check for overflow and apply the class if needed
+function checkOverflow(sectionIds) {
+  sectionIds.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+
+      // Check if the content overflows vertically
+      if (section.scrollHeight > section.clientHeight) {
+          section.classList.add('overflowed');
+      } else {
+          section.classList.remove('overflowed');
+      }
+  });
+}
 // Run the checkOverflow function on page load and window resize
 window.addEventListener('load', () => {
-  const sectionIds = ['founderSection', 'missionVisionSection']; // Add IDs of all sections to check
+  const sectionIds = ['aboutUsSection', 'founderSection', 'missionVisionSection']; // Add IDs of all sections to check
   checkOverflow(sectionIds);
 });
 
 window.addEventListener('resize', () => {
-  const sectionIds = ['aboutUsSfounderSectionection', 'missionVisionSection']; // Add IDs of all sections to check
+  const sectionIds = ['aboutUsSection', 'founderSection', 'missionVisionSection']; // Add IDs of all sections to check
   checkOverflow(sectionIds);
 });

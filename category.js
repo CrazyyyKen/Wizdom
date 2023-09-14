@@ -58,7 +58,6 @@ function getUserKey() {
     return null; // Return null if userData is not found in session storage
 }
 
-// Function to save a book to the user's bag in local storage
 function addToBag(bookName, bookCoverSrc) {
     // Get the user's username or email (you need to obtain this when the user logs in)
     const userKey = getUserKey(); // Replace with your logic to get the user's key
@@ -80,6 +79,31 @@ function addToBag(bookName, bookCoverSrc) {
     if (isBookAlreadyAdded) {
         alert(`"${bookName}" is already in your bag.`);
     } else {
+        // Check if the book is in the user's history and the due date hasn't passed
+        const userHistoryKey = `${userKey}_history`;
+        const userHistoryJSON = localStorage.getItem(userHistoryKey);
+
+        if (userHistoryJSON) {
+            const userHistory = JSON.parse(userHistoryJSON);
+
+            const isBookInHistory = userHistory.some((history) => {
+                return history.books.some((book) => book.name === bookName);
+            });
+
+            if (isBookInHistory) {
+                // Check the due date of the book
+                const currentDate = new Date();
+                const bookHistory = userHistory.find((history) => {
+                    return history.books.some((book) => book.name === bookName);
+                });
+
+                if (currentDate < new Date(bookHistory.dueDate)) {
+                    alert(`You can't add "${bookName}" to your bag. Due date has not passed.`);
+                    return;
+                }
+            }
+        }
+
         // Add the new book to the user's bag
         userBag.push({ name: bookName, coverSrc: bookCoverSrc });
 
@@ -89,6 +113,7 @@ function addToBag(bookName, bookCoverSrc) {
         alert(`Added "${bookName}" to your bag.`);
     }
 }
+
 
 // Add event listener to the "Add to Bag" button outside of generateBook2
 document.getElementById("bookInfoModal").addEventListener("click", (event) => {
