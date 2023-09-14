@@ -205,3 +205,45 @@ window.addEventListener('load', () => {
     checkOverflow(sectionIds);
   });
   
+  // Function to toggle the visibility of the sections based on screen width
+  function toggleSections(categoryId, smallCategoryId, breakpoint) {
+    const categorySection = document.getElementById(categoryId);
+    const smallCategorySection = document.getElementById(smallCategoryId);
+
+    // Get the screen width
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // Determine whether to show the larger or smaller section based on screen width and the specified breakpoint
+    if (screenWidth <= breakpoint) {
+        categorySection.style.display = "none"; // Hide larger section
+        smallCategorySection.style.display = "block"; // Show smaller section
+    } else {
+        categorySection.style.display = "block"; // Show larger section
+        smallCategorySection.style.display = "none"; // Hide smaller section
+    }
+
+    // Scroll the page slightly to trigger the layout
+    window.scrollBy(0, 1);
+}
+
+// Call the toggleSections function for different categories and breakpoints
+window.addEventListener("load", () => {
+    // Example usage for the "Thriller" category
+    toggleSections("thrillerSection", "thrillerSectionSmall", 1000);
+
+    // Example usage for the "History" category
+    toggleSections("historySection", "historySectionSmall", 1000);
+
+    toggleSections("exploreSection", "exploreSectionSmall", 1000);
+});
+
+window.addEventListener("resize", () => {
+    // Example usage for the "Thriller" category
+    toggleSections("thrillerSection", "thrillerSectionSmall", 1000);
+
+    // Example usage for the "History" category
+    toggleSections("historySection", "historySectionSmall", 1000);
+
+    toggleSections("exploreSection", "exploreSectionSmall", 1000);
+});
+

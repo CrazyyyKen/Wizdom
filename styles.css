@@ -247,7 +247,10 @@ body {
 }
 #carousel1,
 #carousel2,
-#carousel3 {
+#carousel3,
+#carousel2small,
+#carousel1small,
+#carousel3small {
 	height: 60vh;
 }
 
@@ -371,6 +374,7 @@ span {
         z-index: 20;
     }
 }
+
 
 
 

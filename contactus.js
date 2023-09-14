@@ -17,7 +17,7 @@ sr.reveal('#inquiryFormColumn', {
 });
 
 $(document).ready(function() {
-    $('#firstNameInput').focus();
+    $('#firstNameInput');
     $('#firstNameInput').on('keydown', function(event) {
         if (event.keyCode === 13) { // Check if Enter key is pressed
             event.preventDefault();
