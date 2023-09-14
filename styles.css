@@ -8,13 +8,16 @@ body {
 	font-family: Gidole !important;
 }
 
+#exploreWebSection .card-title {
+	font-size: 30px;
+}
 
 /* Define a class for handling overflow */
 .overflowed {
 	height: 100% !important; /* When overflow occurs, set height to 100% */
 }
 
-#missionVisionSection .card{
+#missionVisionSection .card, #workSection .card{
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -26,6 +29,11 @@ body {
 }
 
 
+#exploreWebSection a{
+	text-decoration: none !important;
+	color: #000000 !important;
+
+}
 
 #signUpLink, #signInLink, #contactUsLink, #rulesAndRegulationsLink, #founderSection a:not(#founderSection .btn){
 	text-decoration: none !important;
@@ -88,7 +96,7 @@ body {
 	background-color: #fff !important;
 	border-color: #D3D3D3 !important;
 	color: #000000 !important;
-	font-size: 24px !important;
+	font-size: 19px !important;
 	transition: background-color 0.2 ease-in-out, color 0.2s ease-in-out;
 
 }
@@ -135,14 +143,14 @@ body {
 
 .navbar-brand,
 .nav-link {
-	font-size: 24px !important;
+	font-size: 19px !important;
 }
 
 
 .modal-body,
 .section-info,
 .accordion-button {
-	font-size: 24px !important;
+	font-size: 19px !important;
 	text-align: justify !important;
 }
 
@@ -152,19 +160,13 @@ body {
 }
 
 #exploreWebSection .card:hover {
+	opacity: 0.8;
+	cursor: pointer;
     transform: translateY(-20px) !important;
-    background-color: #6C4A3F ;
-    border: 2px solid #4A332D ;
     box-shadow: 0px 44px 35px 0px rgba(0, 0, 0, 0.8) ;
 }
 
-#exploreWebSection .card:hover .section-title,
-#exploreWebSection .card:hover .section-info {
-	color: #fff;
-}
-#exploreWebSection .card:hover img{
-	filter: invert(1);
-}
+
 
 .nav-link {
 	margin: 0px 15px;
@@ -181,7 +183,7 @@ body {
 }
 
 .dropdown-item {
-	font-size: 20px;
+	font-size: 19px;
 	transition: background-color 0.2s ease-in-out;
 
 }
@@ -229,11 +231,8 @@ body {
 #historySection .section-title, #historySection .section-info{
 	color: #fff;
 }
-#exploreWebSection .section-title {
-	font-size: 38px;
 
-}
-.welcome-text-column .section-title, #homeWelcomeSection .section-title, #workWelcomeSection .section-title, #faqWelcomeSection .section-title, #aboutUsWelcomeSection .section-title, #contactWelcomeSection .section-title {
+.welcome-text-column .section-title{
 	font-size: 80px;
 }
 #carousel1,
@@ -313,7 +312,7 @@ body {
 
 
 .modal-title {
-	font-size: 24px;
+	font-size: 19px;
 	font-weight: bold;
 }
 

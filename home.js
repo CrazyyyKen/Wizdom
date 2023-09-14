@@ -1,12 +1,6 @@
 
   window.sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
-  sr.reveal('#missionVisionSection .home-btn', {
-    duration: 1300,
-    origin: 'top',
-    distance: '130px',
-
-
-  });
+  
   sr.reveal('#welcomeSection .welcome-text-column', {
     duration: 1500,
     origin: 'right',
@@ -23,24 +17,7 @@
     // Set this to true to repeat the animation
     // Set the delay between repeats in milliseconds (optional)
   });
-  sr.reveal('#whyUsSection .welcome-text-column', {
-    duration: 1000,
-    origin: 'left',
-    distance: '130px',
-
-    // Set this to true to repeat the animation
-    // Set the delay between repeats in milliseconds (optional)
-  });
-  sr.reveal('#whyUsSection .logo-column', {
-    duration: 1000,
-    origin: 'right',
-    distance: '130px',
-
-    // Set this to true to repeat the animation
-    // Set the delay between repeats in milliseconds (optional)
-  });
-
-
+  
   sr.reveal('#exploreWebSection .container-fluid', {
     duration: 800,
     origin: 'top',
@@ -69,12 +46,12 @@ function checkOverflow(sectionIds) {
 
 // Run the checkOverflow function on page load and window resize
 window.addEventListener('load', () => {
-  const sectionIds = ['welcomeSection', 'whyUsSection', 'exploreWebSection']; // Add IDs of all sections to check
+  const sectionIds = ['welcomeSection', 'exploreWebSection']; // Add IDs of all sections to check
   checkOverflow(sectionIds);
 });
 
 window.addEventListener('resize', () => {
-  const sectionIds = ['welcomeSection', 'whyUsSection', 'exploreWebSection']; // Add IDs of all sections to check
+  const sectionIds = ['welcomeSection', 'exploreWebSection']; // Add IDs of all sections to check
   checkOverflow(sectionIds);
 });
 

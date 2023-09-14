@@ -89,11 +89,11 @@
     // Add other ScrollReveal animations for other elements as needed
 // Run the checkOverflow function on page load and window resize
 window.addEventListener('load', () => {
-  const sectionIds = ['aboutUsSection', 'whyUsSection', 'exploreWebSection']; // Add IDs of all sections to check
+  const sectionIds = ['founderSection', 'missionVisionSection']; // Add IDs of all sections to check
   checkOverflow(sectionIds);
 });
 
 window.addEventListener('resize', () => {
-  const sectionIds = ['aboutUsSection', 'whyUsSection', 'exploreWebSection']; // Add IDs of all sections to check
+  const sectionIds = ['aboutUsSfounderSectionection', 'missionVisionSection']; // Add IDs of all sections to check
   checkOverflow(sectionIds);
 });
