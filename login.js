@@ -27,6 +27,7 @@ loginLink.addEventListener('click', (event) => {
   });
 });
 
+
 $(document).ready(function() {
   $("#signInEmail").focus();
   // Add event listener for focus on input fields with class form-control
@@ -69,7 +70,7 @@ $(document).ready(function() {
     event.preventDefault();
     saveData(); 
   });
-
+  $("#signInEmail").focus();
   // Add event listener to the "Sign in" button
   $('#signInLink').on('click', function(event) {
     $("#emailRequirement").hide();

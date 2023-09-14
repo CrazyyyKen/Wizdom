@@ -1,21 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Initialize Firebase and set up your Firebase-related code here
-  const firebaseConfig = {
-    apiKey: "AIzaSyDis6lCRImPcAlNGayvrqwKMf8BrXbnDhA",
-    authDomain: "wizdom-226be.firebaseapp.com",
-    projectId: "wizdom-226be",
-    storageBucket: "wizdom-226be.appspot.com",
-    messagingSenderId: "198802197917",
-    appId: "1:198802197917:web:7d697711fa4a8bdd1e7374",
-    measurementId: "G-NLQD1K8H4J"
-  };
-  
-  firebase.initializeApp(firebaseConfig);
-
-  // Get a reference to the Firestore database
-  const db = firebase.firestore();
-
-});
 window.sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
 
 sr.reveal('#locationColumn', {
@@ -35,79 +17,142 @@ sr.reveal('#inquiryFormColumn', {
 });
 
 $(document).ready(function() {
+    $('#firstNameInput').focus();
+    $('#firstNameInput').on('keydown', function(event) {
+        if (event.keyCode === 13) { // Check if Enter key is pressed
+            event.preventDefault();
+            // Move focus to the next input field (last name)
+            $('#lastNameInput').focus();
+        }
+    });
+    
+    // Add a keydown event listener to the last name input field
+    $('#lastNameInput').on('keydown', function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            // Move focus to the next input field (phone number)
+            $('#phoneNumberInput').focus();
+        }
+    });
+    
+    // Add a keydown event listener to the phone number input field
+    $('#phoneNumberInput').on('keydown', function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            // Move focus to the next input field (email)
+            $('#emailInput').focus();
+        }
+    });
+    
+    // Add a keydown event listener to the email input field
+    $('#emailInput').on('keydown', function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            // Move focus to the next input field (comments)
+            $('#commentsInput').focus();
+        }
+    });
+    
+    // Add a keydown event listener to the comments input field
+    $('#commentsInput').on('keydown', function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $('#submitForm').click();
+        }
+    });
 
-
-  $('#submitForm').click(function() {
-      // Retrieve form data
-      const firstName = $('#firstNameInput').val();
-      const lastName = $('#lastNameInput').val();
-      const phoneNumber = $('#phoneNumberInput').val();
-      const email = $('#emailInput').val();
-      const comments = $('#commentsInput').val();
-
-      // Input validation
-      if (firstName === '') {
-          $("#feedbackFirstName").show();
-          return; 
-      } else {
-          $("#feedbackFirstName").hide();
-      }
-
-      if (lastName === '') {
-          $("#feedbackLastName").show();
-          return; 
-      } else {
-          $("#feedbackLastName").hide();
-      }
-
-      const phonePattern = /^\d{10}$/;
-      if (!phoneNumber.match(phonePattern)) {
-          $("#feedbackPhoneNumberFormat").show();
-          return; 
-      } else {
-          $("#feedbackPhoneNumberFormat").hide();
-      }
-
-      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (!email.match(emailPattern)) {
-          $("#feedbackEmailFormat").show();
-          return; 
-      } else {
-          $("#feedbackEmailFormat").hide();
-      }
-
-      if (comments === '') {
-          $("#feedbackComments").show();
-          return; 
-      } else {
-          $("#feedbackComments").hide();
-      }
-
-      // Create a data object to send to the server
-      const formData = {
-          firstName: firstName,
-          lastName: lastName,
-          phoneNumber: phoneNumber,
-          email: email,
-          comments: comments
-      };
-
-      // Save the form data to Firebase Firestore 
-      db.collection("feedback")
-          .add(formData)
-          .then(() => {
-              alert("Thank you for your feedback. We appreciate your input and will review it shortly.");
-              // Clear form fields
-              $('#firstNameInput').val('');
-              $('#lastNameInput').val('');
-              $('#phoneNumberInput').val('');
-              $('#emailInput').val('');
-              $('#commentsInput').val('');
-          })
-          .catch((error) => {
-              console.error("Error adding document: ", error);
-          });
-
-      return false;
-  });
-});
+    $(document).ready(function () {
+        $('#submitForm').click(function () {
+            // Retrieve form data
+            const firstName = $('#firstNameInput').val();
+            const lastName = $('#lastNameInput').val();
+            const phoneNumber = $('#phoneNumberInput').val();
+            const email = $('#emailInput').val();
+            const comments = $('#commentsInput').val();
+            let hasError = false;
+    
+            // Input validation
+            if (firstName === '') {
+                $("#feedbackFirstName").show();
+                hasError = true;
+            } else {
+                $("#feedbackFirstName").hide();
+            }
+    
+            if (lastName === '') {
+                $("#feedbackLastName").show();
+                hasError = true;
+            } else {
+                $("#feedbackLastName").hide();
+            }
+    
+            const phonePattern = /^\d{10}$/;
+            if (!phoneNumber.match(phonePattern)) {
+                $("#feedbackPhoneNumberFormat").show();
+                $("#phoneNumberInput").val("");
+                hasError = true;
+            } else {
+                $("#feedbackPhoneNumberFormat").hide();
+            }
+    
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailPattern)) {
+                $("#feedbackEmailFormat").show();
+                $("#emailInput").val("");
+                hasError = true;
+            } else {
+                $("#feedbackEmailFormat").hide();
+            }
+    
+            if (comments === '') {
+                $("#feedbackComments").show();
+                hasError = true;
+            } else {
+                $("#feedbackComments").hide();
+            }
+    
+            if (hasError) {
+                if (!firstName) {
+                    $("#firstNameInput").focus();
+                } else if (!lastName) {
+                    $("#lastNameInput").focus();
+                } else if (!phoneNumber) {
+                    $("#phoneNumberInput").focus();
+                } else if (!email) {
+                    $("#emailInput").focus();
+                } else if (!comments) {
+                    $("#commentsInput").focus();
+                }
+                return;
+            }
+    
+            // Create a data object to send to the server
+            const formData = {
+                firstName: firstName,
+                lastName: lastName,
+                phoneNumber: phoneNumber,
+                email: email,
+                comments: comments
+            };
+    
+            // Send the data to Google Sheets using AJAX
+            $.ajax({
+                url: "https://api.apispreadsheets.com/data/1nPPosO6vfR7DT95/",
+                type: "POST",
+                data: formData,
+                success: function (response) {
+                    console.log("Data sent successfully");
+                    // Optionally, you can clear the form fields after successful submission
+                    $('#firstNameInput').val('');
+                    $('#lastNameInput').val('');
+                    $('#phoneNumberInput').val('');
+                    $('#emailInput').val('');
+                    $('#commentsInput').val('');
+                },
+                error: function (error) {
+                    console.error("Error sending data:", error);
+                }
+            });
+        });
+    });
+})
