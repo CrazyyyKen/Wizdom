@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Website title and favicon -->
     <title>Sign In | Wizdom</title>
@@ -24,7 +23,7 @@
             <div class="col-md-7 mx-auto"  id="signInSection">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-5">
-                        <img src="Media/LogoWithoutBackground.png" height="400px" width="400px" class="img-fluid">
+                        <img src="Media/LogoWithoutBackground.png" height="400px" width="400px">
                     </div>
                     <div class="col-md-6">
                         <div class="col-md-12 text-center section-title pb-3">
@@ -32,25 +31,34 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control text-start" id="floatingInput"
+                                <input type="email" class="form-control text-start" id="signInEmail"
                                     placeholder="name@example.com">
                                 <label for="floatingInput">Email address</label>
+                                <div class="invalid-feedback" id="signInEmailRequirement" style="display: none;">
+                                    Please enter a valid email address (e.g., name@example.com).
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="password" class="form-control text-start" id="floatingPassword"
+                                <input type="password" class="form-control text-start" id="signInPassword"
                                     placeholder="Password">
                                 <label for="floatingPassword"s>
                                     Password
                                 </label>
+                                <div class="invalid-feedback" id="signInPasswordRequirement" style="display: none;">
+                                    Incorrect password!
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12 text-center">
                             <a href="home.html">
-                                <button type="button" class="btn home-btn mt-3">
+                                <button type="button" class="btn home-btn mt-3" id="signInButton">
                                     Sign in
                                 </button>
+                                <div class="fb btn" id="facebook-login-button"> 
+                                    Login with Facebook
+                                </div>
                             </a>
                         </div>
                         <div class="col-md-12 pt-3 pb-3 text-center section-info">
@@ -68,7 +76,7 @@
                 style="opacity: 0; display: none;">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-5">
-                        <img src="Media/LogoWithoutBackground.png" height="400px" width="400px" class="img-fluid">
+                        <img src="Media/LogoWithoutBackground.png" height="400px" width="400px">
                     </div>
                     <div class="col-md-6">
                         <div class="col-md-12 text-center section-title pb-3">
@@ -76,29 +84,44 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control text-start" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control text-start" placeholder="Username" id ="signUpUsername" aria-label="username" aria-describedby="basic-addon1">
                                 <label for="floatingInput">Username</label>
+                                <div class="invalid-feedback" id="emptyUsername">
+                                    Username cannot be empty.
+                                </div>
+                                <div class="invalid-feedback" id="duplicateUsername">
+                                    Username already exists.
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control text-start" id="floatingInput"
-                                    placeholder="name@example.com">
+                                <input type="email" class="form-control text-start" id="signUpEmail"
+                                    placeholder="name@example.com" required>
                                 <label for="floatingInput">Email address</label>
+                                <div class="invalid-feedback" id="emailRequirement">
+                                    Invalid email format. Please enter a valid email.
+                                </div>
+                                <div class="invalid-feedback" id="duplicateEmail">
+                                    Email already exists.
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="password" class="form-control text-start" id="floatingPassword"
-                                    placeholder="Password">
+                                <input type="password" class="form-control text-start" id="signUpPassword"
+                                    placeholder="Password" required>
                                 <label for="floatingPassword">
                                     Password
                                 </label>
+                                <div class="invalid-feedback" id="passwordRequirement">
+                                    At least 8 characters contain at least one number & one alphabet
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12 text-center">
                             <a href="#">
-                                <button type="button" class="btn home-btn mt-3">
+                                <button type="button" class="btn home-btn mt-3" id="signUpButton">
                                     Sign up
                                 </button>
                             </a>
@@ -130,6 +153,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="styles.js"></script>
     <script src="login.js"></script>
+
+    <!-- Include your JavaScript file -->
+    <script src="facebook-login.js"></script>
+</body>
 
 </body>
 
