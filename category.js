@@ -40,9 +40,67 @@ function openModal(bookName, bookCoverSrc, bookDescription) {
     const bookInfoContent = document.querySelector("#bookInfoModal .book-info");
     bookInfoContent.innerText = bookDescription;
 
+    const addToBagButton = document.querySelector("#bookInfoModal .btn-primary");
+    addToBagButton.dataset.bookName = bookName; // Set the book name
+    addToBagButton.dataset.bookCoverSrc = bookCoverSrc; // Set the book desc
+
     // Show the modal
     modal.show();
 }
+
+// Function to get the user key (username or email) from session storage
+function getUserKey() {
+    const userDataJSON = sessionStorage.getItem('userData');
+    if (userDataJSON) {
+        const userData = JSON.parse(userDataJSON);
+        return userData[0]; // Assuming that the first item in the array is the user's key (username or email)
+    }
+    return null; // Return null if userData is not found in session storage
+}
+
+// Function to save a book to the user's bag in local storage
+function addToBag(bookName, bookCoverSrc) {
+    // Get the user's username or email (you need to obtain this when the user logs in)
+    const userKey = getUserKey(); // Replace with your logic to get the user's key
+
+    // Get the current user's bag from local storage (if it exists)
+    let userBag = localStorage.getItem(userKey);
+
+    // If the user's bag doesn't exist, create an empty array
+    if (!userBag) {
+        userBag = [];
+    } else {
+        // Parse the existing bag if it exists
+        userBag = JSON.parse(userBag);
+    }
+
+    // Check if the book is already in the user's bag
+    const isBookAlreadyAdded = userBag.some((book) => book.name === bookName);
+
+    if (isBookAlreadyAdded) {
+        alert(`"${bookName}" is already in your bag.`);
+    } else {
+        // Add the new book to the user's bag
+        userBag.push({ name: bookName, coverSrc: bookCoverSrc });
+
+        // Store the updated user's bag in local storage
+        localStorage.setItem(userKey, JSON.stringify(userBag));
+
+        alert(`Added "${bookName}" to your bag.`);
+    }
+}
+
+// Add event listener to the "Add to Bag" button outside of generateBook2
+document.getElementById("bookInfoModal").addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-primary")) {
+        const bookName = event.target.dataset.bookName;
+        const bookCoverSrc = document.querySelector("#bookInfoModal img").src; // Get the book cover image source
+        addToBag(bookName, bookCoverSrc); // Pass bookCoverSrc instead of book description
+
+        const modal = bootstrap.Modal.getInstance(document.getElementById("bookInfoModal"));
+        modal.hide(); // Close the modal after adding to the bag
+    }
+});
 
 // Generate book for every class passed into the function and add click event listeners
 function generateBook2(category, className, index) {
@@ -111,3 +169,14 @@ sr.reveal('#exploreSection .home-btn, #historySection .home-btn, #thrillerSectio
     interval: 1000, // Set the delay between repeats in milliseconds (optional)
 });
 
+// Run the checkOverflow function on page load and window resize
+window.addEventListener('load', () => {
+    const sectionIds = ['exploreSection', 'historySection', 'thrillerSection']; // Add IDs of all sections to check
+    checkOverflow(sectionIds);
+  });
+  
+  window.addEventListener('resize', () => {
+    const sectionIds = ['exploreSection', 'historySection', 'thrillerSection']; // Add IDs of all sections to check
+    checkOverflow(sectionIds);
+  });
+  

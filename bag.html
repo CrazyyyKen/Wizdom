@@ -128,57 +128,42 @@
                 My Bag
             </div>
 
-            <div class="table-responsive col-md-10 mx-auto" style="background-color: #F5F2EA; border: 1px solid #D3D3D3;">
-
+            <div class="table-responsive col-md-10 mx-auto" style="background-color: #fff; border: 1px solid #D3D3D3;">
                 <table class="table table-hover section-info text-center">
-                    <thead>
+                    <thead">
                         <tr>
-                            <th scope="col" class="">#</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Book Cover</th>
                             <th scope="col">Book Name</th>
-                            <th scope="col">Book Description</th>
                             <th scope="col">Price</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td></td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td><button type="button" class="btn home-btn">
-                                Remove
-                            </button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td colspan="2" class="text-end pe-5">Grand Total</td>
-                            <td>@fat</td>
-                            <td><button type="button" class="btn home-btn" data-bs-toggle="modal" data-bs-target="#checkOutModal">
-                                Checkout
-                            </button></td>
-                        </tr>
-                        
+                    <tbody id="bagTableBody">
+                        <!-- Books in the bag will be dynamically inserted here -->
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Grand Total:</strong></td>
+                            <td id="grandTotal">RM0</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button type="button" class="btn home-btn checkout-button">Checkout</button>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
-
-            </div>
-
-            <div class="col-md-10 mx-auto" style="background-color: #F5F2EA; border: 1px solid #D3D3D3;">
                 
             </div>
+
         </div>
 
     </section>
@@ -189,7 +174,7 @@
 
                 <!-- Modal title -->
                 <div class="modal-header text-center">
-                    <h5 class="modal-title" style="width: 100%;" id="ModalLabel">Rules and Regulations</h5>
+                    <h5 class="modal-title" style="width: 100%;" id="ModalLabel">Proceed your Payment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -197,7 +182,7 @@
                 <div class="modal-body">
                     <div class="row justify-content-center">
                         <div class="col-md-4 d-flex justify-content-center">
-                            <img src="Media/LogoWithoutBackground.png" height="350px" width="350px">
+                            <img src="Media/QRCode.jpg" height="350px" width="350px" class="img-fluid">
                         </div>
                         <div class="col-md-8 ps-5 pe-5">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
@@ -212,7 +197,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got It</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Pay & Rent</button>
                 </div>
 
             </div>
@@ -229,10 +214,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- External JavaScript files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
     <script src="navbar.js"></script>
     <script src="scrollreveal.min.js"></script>
 
     <script src="styles.js"></script>
+
+    <script src="bag.js"></script>
 
 
 </body>

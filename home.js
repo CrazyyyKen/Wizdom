@@ -1,21 +1,3 @@
-function pageScroll() {
-  window.scrollBy(0, 1);
-}
-
-const box1 = document.getElementById('homeWelcomeSection');
-const box2 = document.getElementById('homeSection');
-const boxLink = document.getElementById('homeWelcomeSection');
-
-boxLink.addEventListener('click', (event) => {
-  event.preventDefault();
-  box1.style.display = 'none';
-  box2.style.removeProperty("display");
-
-  // Apply opacity and ScrollReveal animation after a short delay (e.g., 500ms)
-  box1.style.opacity = 0;
-  box2.style.opacity = 1;
-  pageScroll()
-  // Initialize ScrollReveal
 
   window.sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
   sr.reveal('#missionVisionSection .home-btn', {
@@ -42,7 +24,7 @@ boxLink.addEventListener('click', (event) => {
     // Set the delay between repeats in milliseconds (optional)
   });
   sr.reveal('#whyUsSection .welcome-text-column', {
-    duration: 1500,
+    duration: 1000,
     origin: 'left',
     distance: '130px',
 
@@ -50,7 +32,7 @@ boxLink.addEventListener('click', (event) => {
     // Set the delay between repeats in milliseconds (optional)
   });
   sr.reveal('#whyUsSection .logo-column', {
-    duration: 1500,
+    duration: 1000,
     origin: 'right',
     distance: '130px',
 
@@ -59,11 +41,9 @@ boxLink.addEventListener('click', (event) => {
   });
 
 
-
-
-  sr.reveal('#exploreWebSection .column1', {
+  sr.reveal('#exploreWebSection .container-fluid', {
     duration: 800,
-    origin: 'left',
+    origin: 'top',
     distance: '130px',
 
     // Set this to true to repeat the animation
@@ -71,45 +51,32 @@ boxLink.addEventListener('click', (event) => {
   });
 
 
-
-
-  sr.reveal('#exploreWebSection .column2', {
-    duration: 800,
-    origin: 'bottom',
-    distance: '130px',
-
-    // Set this to true to repeat the animation
-    // Set the delay between repeats in milliseconds (optional)
-  });
-
-
-
-
-  sr.reveal('#exploreWebSection .column3', {
-    duration: 800,
-    origin: 'right',
-    distance: '130px',
-
-    // Set this to true to repeat the animation
-    // Set the delay between repeats in milliseconds (optional)
-  });
-
-  sr.reveal('#backToTopButton', {
-    duration: 800,
-    origin: 'bottom',
-    distance: '130px',
-
-    // Set this to true to repeat the animation
-    // Set the delay between repeats in milliseconds (optional)
-  });
   // Add other ScrollReveal animations for other elements as needed
+
+// Function to check for overflow and apply the class if needed
+function checkOverflow(sectionIds) {
+  sectionIds.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+
+      // Check if the content overflows vertically
+      if (section.scrollHeight > section.clientHeight) {
+          section.classList.add('overflowed');
+      } else {
+          section.classList.remove('overflowed');
+      }
+  });
+}
+
+// Run the checkOverflow function on page load and window resize
+window.addEventListener('load', () => {
+  const sectionIds = ['welcomeSection', 'whyUsSection', 'exploreWebSection']; // Add IDs of all sections to check
+  checkOverflow(sectionIds);
 });
 
-
-
-
-// Use ScrollReveal to apply animations
-
+window.addEventListener('resize', () => {
+  const sectionIds = ['welcomeSection', 'whyUsSection', 'exploreWebSection']; // Add IDs of all sections to check
+  checkOverflow(sectionIds);
+});
 
 
 

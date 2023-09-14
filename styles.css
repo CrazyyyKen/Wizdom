@@ -7,6 +7,17 @@
 body {
 	font-family: Gidole !important;
 }
+
+
+/* Define a class for handling overflow */
+.overflowed {
+	height: 100% !important; /* When overflow occurs, set height to 100% */
+}
+
+#missionVisionSection .card{
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
 /* Add this CSS to your styles.css file or a custom CSS file */
 #navbarSupportedContent {
     background-color: #fff; /* Replace 'your-color-here' with your desired background color */
@@ -14,34 +25,8 @@ body {
 
 }
 
-#contactSection1 .section-column{
-	border-radius: 24px;
-}
-.arrow {
-	transition: transform 0.3s ease-in-out;
-  }
-  .rotate {
-	transform: rotate(90deg);
-  }
 
-  .faq-column{
-	background-color: #F5F2EA !important;
-    border: 2px solid #D3D3D3;
-	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  }
-  .faq-column:hover{
-	background-color: #896B60 !important ;
-    border: 2px solid #6C4A3F ;
-	color: #fff;
-  }
-  .answer-column{
-	background-color: #fff;
-  }
- 
-#founder1 img, #founder2 img, #founder3 img, #founder4 img{
-	height: 250px;
-	width: 250px;
-}
+
 #signUpLink, #signInLink, #contactUsLink, #rulesAndRegulationsLink, #founderSection a:not(#founderSection .btn){
 	text-decoration: none !important;
 	color: #896B60 !important;
@@ -78,9 +63,7 @@ body {
 	font-size: 20px !important;
 }
 
-#signInSection, #signUpSection, #homeWelcomeSection, #homeSection, #workWelcomeSection, #workSection, #faqWelcomeSection, #faqSection, #aboutUsWelcomeSection, #aboutUsSection, #contactWelcomeection, #contactSection {
-	transition: display 0.8s ease-in-out, opacity 0.8s ease-in-out
-  }
+
 
   
   #signInSection .home-btn, #signUpSection .home-btn, #inquiryForm .home-btn{
@@ -99,8 +82,9 @@ body {
 	color: #fff !important;
   }
 
-.btn:not( .home-btn),
-.home-btn {
+.btn:not(.home-btn),
+.home-btn,
+.accordion-button{
 	background-color: #fff !important;
 	border-color: #D3D3D3 !important;
 	color: #000000 !important;
@@ -115,13 +99,17 @@ body {
 }
 
 .btn-primary:hover,
-.home-btn:hover {
+.home-btn:hover,
+.accordion-button:hover{
 	color: #000000 !important;
 	background-color: #F5F2EA !important;
 }
+
 .btn-primary:focus,
 .btn-primary:active,.home-btn:focus,
-.home-btn:active{
+.home-btn:active,
+.accordion-button:active,
+.accordion-button:focus{
 	color: #000000 !important;
 	background-color: #C6AC8F !important;
 	box-shadow: none !important;
@@ -152,30 +140,29 @@ body {
 
 
 .modal-body,
-.section-info {
-	font-size: 24px;
-	text-align: justify;
+.section-info,
+.accordion-button {
+	font-size: 24px !important;
+	text-align: justify !important;
 }
 
-.section-column {
-    background-color: #F5F2EA; 
-    border: 2px solid #EAE0D5;
+#exploreWebSection .card{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-	transition: transform 0.8s ease-in-out, background-color 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.section-column:hover:not(#missionVisionSection .section-column, #founderSection .section-column, #contactSection1 .section-column) {
+#exploreWebSection .card:hover {
     transform: translateY(-20px) !important;
     background-color: #6C4A3F ;
     border: 2px solid #4A332D ;
     box-shadow: 0px 44px 35px 0px rgba(0, 0, 0, 0.8) ;
 }
 
-.section-column:hover:not(#missionVisionSection .section-column, #founderSection .section-column, #contactSection1 .section-column) .section-title,
-.section-column:hover:not(#missionVisionSection .section-column, #founderSection .section-column, #contactSection1 .section-column) .section-info {
+#exploreWebSection .card:hover .section-title,
+#exploreWebSection .card:hover .section-info {
 	color: #fff;
 }
-.section-column:hover:not(#missionVisionSection .section-column, #founderSection .section-column, #contactSection1 .section-column) img{
+#exploreWebSection .card:hover img{
 	filter: invert(1);
 }
 
@@ -234,7 +221,7 @@ body {
 	color: #C6AC8F !important;
 	background-color: #4A332D !important;
 }
-.section-title {
+.section-title{
 	font-size: 60px;
 	color: #000000;
 }
