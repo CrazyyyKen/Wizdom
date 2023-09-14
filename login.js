@@ -27,7 +27,9 @@ loginLink.addEventListener('click', (event) => {
   });
 });
 
+
 $(document).ready(function() {
+  $("#signInEmail").focus();
   // Add event listener for focus on input fields with class form-control
   $('.form-control').on('focus', function() {
     // Find the corresponding label and add the active class to adjust the font size
@@ -40,22 +42,78 @@ $(document).ready(function() {
     $(this).siblings('label').removeClass('active');
   });
 
+  // for sign up page
+  $("#signUpUsername").on('keydown', function(event) {
+    if (event.keyCode === 13) { // Check if Enter key is pressed
+      event.preventDefault();
+      $("#signUpEmail").focus(); // Move focus to the next input field (Email)
+    }
+  });
+  
+  // Add a keydown event listener to the Email input field
+  $("#signUpEmail").on('keydown', function(event) {
+    if (event.keyCode === 13) { 
+      event.preventDefault(); 
+      $("#signUpPassword").focus(); // Move focus to the next input field (Password)
+    }
+  });
+  
+  // Add a keydown event listener to the Password input field
+  $("#signUpPassword").on('keydown', function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault(); 
+      saveData(); // Call the saveData function to save the data
+    }
+  });
+
   $('#signUpButton').on('click', function(event) {
     event.preventDefault();
     saveData(); 
   });
-
+  $("#signInEmail").focus();
   // Add event listener to the "Sign in" button
+  $('#signInLink').on('click', function(event) {
+    $("#emailRequirement").hide();
+    $("#passwordRequirement").hide();
+    $("#emptyUsername").hide();
+    $("#duplicateUsername").hide();
+    $("#duplicateEmail").hide();
+    $("#signInEmail").focus();
+    
+  });
+
+  //for sign in page
+  $("#signInEmail").on('keydown', function(event) {
+    if (event.keyCode === 13) { 
+      event.preventDefault();
+      $("#signInPassword").focus(); 
+    }
+  });
+ 
+  $("#signInPassword").on('keydown', function(event) {
+    if (event.keyCode === 13) { 
+      event.preventDefault(); 
+      signIn();
+    }
+  });
+
   $('#signInButton').on('click', function(event) {
     event.preventDefault();
     signIn();
   });
 
+  $('#signUpLink').on('click', function(event) {
+    $("#signInEmailRequirement").hide();
+    $("#signInPasswordRequirement").hide();
+    $("#signUpUsername").focus();
+  });
 });
 
 
 
 function saveData() {
+  // Add a keydown event listener to the first input field
+
   // Get input values
   const username = $("#signUpUsername").val();
   const email = $("#signUpEmail").val();
@@ -98,6 +156,15 @@ function saveData() {
   }
 
   if (hasError) {
+    if (!username) {
+      $("#signUpUsername").focus();
+    } 
+    else if (!emailValid) {
+      $("#signUpEmail").focus();
+    } 
+    else if (!passwordValid) {
+      $("#signUpPassword").focus();
+    }
       return;
   }
   
@@ -176,6 +243,7 @@ function signIn() {
     }
     $("#signInEmail").val("");
     $("#signInPassword").val("");
+    $("#signInEmail").focus();
   }
 
  
@@ -191,6 +259,7 @@ function signIn() {
     $("#signInPasswordRequirement").show();
     $("#signInEmail").val("");
     $("#signInPassword").val("");
+    $("#signInEmail").focus();
   }
   
 }
