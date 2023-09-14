@@ -88,3 +88,44 @@ function displayRentalHistory() {
 
 // Call the function to display rental history when the page loads
 displayRentalHistory();
+
+$(document).ready(function () {
+    // Initialize Bootstrap tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Function to display the stored image
+    function displayStoredImage() {
+        const storedImage = localStorage.getItem('profileImage');
+        if (storedImage) {
+            $('#profile-picture').attr('src', storedImage);
+        }
+    }
+
+    // Display the stored image on page load
+    displayStoredImage();
+
+    // Add click event handler to trigger file input
+    $('#profile-picture').click(function () {
+        $('#profile-picture-input').click();
+    });
+
+    // Add change event handler for file input
+    $('#profile-picture-input').change(function () {
+        // Handle the selected file here
+        const selectedFile = this.files[0];
+
+        if (selectedFile) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imageData = e.target.result;
+                $('#profile-picture').attr('src', imageData);
+
+                // Store the image data in local storage
+                localStorage.setItem('profileImage', imageData);
+
+                alert('Profile picture selected: ' + selectedFile.name);
+            };
+            reader.readAsDataURL(selectedFile);
+        }
+    });
+});
