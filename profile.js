@@ -8,9 +8,8 @@ function getUserKey() {
     return null; // Return null if userData is not found in session storage
 } 
 
-// Function to calculate the total books rented from the user's history
-function calculateTotalBooksRented() {
-    const userKey = getUserKey(); // Get the user's key (email) from session storage
+// Function to calculate the total number of books rented
+function calculateTotalBooksRented(userKey) {
     const userHistoryKey = `${userKey}_history`; // Create the key for user's history in local storage
 
     // Retrieve the user's history from local storage
@@ -25,13 +24,13 @@ function calculateTotalBooksRented() {
             totalBooksRented += rentalInfo.books.length;
         });
 
-        // Display the total books rented in section-info
-        const totalRentalElement = document.querySelector("#totalRental");
-        totalRentalElement.textContent = `Total Books Rented: ${totalBooksRented}`;
+        return totalBooksRented;
     }
+
+    return 0; // Return 0 if no history found
 }
 
-// Function to retrieve and display the username and email from local storage
+// Function to retrieve and display user data (username, email, total books rented) in the table
 function displayUserData() {
     const userKey = getUserKey(); // Get the user's key (email) from session storage
 
@@ -47,16 +46,21 @@ function displayUserData() {
         if (userData) {
             // Display the username and email
             const usernameElement = document.querySelector("#username");
-            usernameElement.textContent += `\nUsername: ${userData.username}`;
+            usernameElement.textContent = userData.username;
             const emailElement = document.querySelector("#email");
-            emailElement.textContent += `Email: ${userData.email}`;
+            emailElement.textContent = userData.email;
+
+            // Calculate and display the total number of books rented
+            const totalBooksRented = calculateTotalBooksRented(userKey);
+            const totalBooksRentedElement = document.querySelector("#totalBooksRented");
+            totalBooksRentedElement.textContent = `${totalBooksRented}`;
         }
     }
 }
 
-// Call the functions to calculate total books rented and display user data
-calculateTotalBooksRented();
+// Call the function to display user data
 displayUserData();
+
 
 // Function to display user's rental history in the table
 function displayRentalHistory() {
@@ -66,7 +70,7 @@ function displayRentalHistory() {
 
     if (userHistoryJSON) {
         const userHistory = JSON.parse(userHistoryJSON);
-        const tableBody = document.querySelector(".table tbody");
+        const tableBody = document.querySelector("#bookRentalHistory .table tbody");
 
         // Clear the table before adding rental history
         tableBody.innerHTML = "";
