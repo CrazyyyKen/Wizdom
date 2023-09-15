@@ -6,11 +6,30 @@ function getUserKey() {
         return userData[0]; // Assuming that the first item in the array is the user's key (username or email)
     }
     return null; // Return null if userData is not found in session storage
-} 
+}
+
+function storeProfilePicture(userEmail, imageData) {
+    const userDataArrayJSON = localStorage.getItem('userDataArray');
+    const userDataArray = JSON.parse(userDataArrayJSON);
+
+    // Find the user data with the matching email
+    const matchingUserData = userDataArray.find((userData) => userData.email === userEmail);
+
+    if (matchingUserData) {
+        // Update the user data with the new profile image
+        matchingUserData.profileImage = imageData;
+
+        // Update the userDataArray in local storage
+        localStorage.setItem('userDataArray', JSON.stringify(userDataArray));
+    }
+
+    // Store the image data in Local Storage with the user's email as the key
+    localStorage.setItem(userEmail, imageData);
+}
 
 // Function to calculate the total number of books rented
 function calculateTotalBooksRented(userKey) {
-    const userHistoryKey = `${userKey}_history`; // Create the key for user's history in local storage
+    const userHistoryKey = `${userKey}_history`; // Create the key for the user's history in local storage
 
     // Retrieve the user's history from local storage
     const userHistoryJSON = localStorage.getItem(userHistoryKey);
@@ -27,7 +46,7 @@ function calculateTotalBooksRented(userKey) {
         return totalBooksRented;
     }
 
-    return 0; // Return 0 if no history found
+    return 0; // Return 0 if no history is found
 }
 
 // Function to retrieve and display user data (username, email, total books rented) in the table
@@ -61,7 +80,6 @@ function displayUserData() {
 // Call the function to display user data
 displayUserData();
 
-
 // Function to display user's rental history in the table
 function displayRentalHistory() {
     const userKey = getUserKey();
@@ -94,42 +112,65 @@ function displayRentalHistory() {
 displayRentalHistory();
 
 $(document).ready(function () {
-    // Initialize Bootstrap tooltip
-    $('[data-toggle="tooltip"]').tooltip();
+    const userKey = getUserKey(); // Get the user's key (email) from session storage
 
-    // Function to display the stored image
-    function displayStoredImage() {
-        const storedImage = localStorage.getItem('profileImage');
-        if (storedImage) {
-            $('#profile-picture').attr('src', storedImage);
+    if (userKey) {
+        // User key is available, you can use it here
+        console.log('User key:', userKey);
+
+        const userDataArrayJSON = localStorage.getItem('userDataArray');
+        const userDataArray = JSON.parse(userDataArrayJSON);
+
+        // Find the user data with the matching email
+        const matchingUserData = userDataArray.find((userData) => userData.email === userKey);
+
+        if (matchingUserData) {
+            // Load the profile picture from local storage
+            loadProfilePicture(userKey);
+
+            // Add click event handler to trigger file input
+            $('#profilePicture').click(function () {
+                $('#ProfilePictureInput').click();
+            });
+
+            // Add change event handler for file input
+            $('#ProfilePictureInput').change(function () {
+                // Handle the selected file here
+                const selectedFile = this.files[0];
+
+                if (selectedFile) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const imageData = e.target.result;
+                        $('#profilePicture').attr('src', imageData);
+
+                        // Store the image data in local storage and user data
+                        storeProfilePicture(userKey, imageData);
+
+                        alert('Profile picture has been changed and saved.');
+                    };
+                    reader.readAsDataURL(selectedFile);
+                }
+            });
         }
+    } else {
+        // User key is not available in session storage
+        console.log('User key not found. Please sign in again.');
+        // You can also redirect to the login page if needed
+        window.location.href = 'login.html';
     }
 
-    // Display the stored image on page load
-    displayStoredImage();
-
-    // Add click event handler to trigger file input
-    $('#profilePicture').click(function () {
-        $('#ProfilePictureInput').click();
-    });
-
-    // Add change event handler for file input
-    $('#ProfilePictureInput').change(function () {
-        // Handle the selected file here
-        const selectedFile = this.files[0];
-
-        if (selectedFile) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const imageData = e.target.result;
-                $('#profilePicture').attr('src', imageData);
-
-                // Store the image data in local storage
-                localStorage.setItem('profileImage', imageData);
-
-                alert('Profile picture will be changed.');
-            };
-            reader.readAsDataURL(selectedFile);
-        }
-    });
+    // Initialize Bootstrap tooltip
+    $('[data-toggle="tooltip"]').tooltip();
 });
+
+// Function to load the profile picture from local storage
+function loadProfilePicture(userEmail) {
+    const storedImage = localStorage.getItem(userEmail); // Retrieve the image data associated with the user's email
+    if (storedImage) {
+        $('#profilePicture').attr('src', storedImage);
+    }
+}
+
+// Call the function to load the profile picture when the page loads
+loadProfilePicture(userKey);
