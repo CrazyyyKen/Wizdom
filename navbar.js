@@ -20,7 +20,15 @@ function handleScroll() {
 
 // Listen for the scroll event and call the handleScroll function
 window.addEventListener("scroll", handleScroll);
+// Function to clear the URL hash on page load
+function clearUrlHash() {
+    if (window.location.hash !== '') {
+        history.replaceState(null, document.title, window.location.pathname);
+    }
+}
 
+// Call the function when the page loads
+window.addEventListener('load', clearUrlHash);
 function updateNavLinksHref(breakpoint) {
     // Get the screen width
     const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;

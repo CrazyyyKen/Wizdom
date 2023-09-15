@@ -1,29 +1,29 @@
-// // Delay the initialization of ScrollReveal until after the initial scroll
-// window.addEventListener("scroll", function initScrollReveal() {
-//     // Remove the scroll event listener to prevent further delays
-//     window.removeEventListener("scroll", initScrollReveal);
+// Delay the initialization of ScrollReveal until after the initial scroll
+window.addEventListener("scroll", function initScrollReveal() {
+    // Remove the scroll event listener to prevent further delays
+    window.removeEventListener("scroll", initScrollReveal);
     
-//     // Initialize ScrollReveal
-//     const sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
+    // Initialize ScrollReveal
+    const sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
   
-//     sr.reveal('#exploreSection .container-fluid', {
-//       duration: 1500,
-//       origin: 'top',
-//       distance: '130px',
-//     });
+    sr.reveal('#exploreSection .container-fluid', {
+      duration: 1500,
+      origin: 'top',
+      distance: '130px',
+    });
   
-//     sr.reveal('#historySection .container-fluid', {
-//       duration: 1500,
-//       origin: 'top',
-//       distance: '130px',
-//     });
+    sr.reveal('#historySection .container-fluid', {
+      duration: 1500,
+      origin: 'top',
+      distance: '130px',
+    });
   
-//     sr.reveal('#thrillerSection .container-fluid', {
-//       duration: 800,
-//       origin: 'top',
-//       distance: '130px',
-//     });
-//   });
+    sr.reveal('#thrillerSection .container-fluid', {
+      duration: 800,
+      origin: 'top',
+      distance: '130px',
+    });
+  });
 
   
 
@@ -45,8 +45,12 @@ function toggleSections(categoryId, smallCategoryId, breakpoint) {
         smallCategorySection.style.display = "none"; // Hide smaller section
     }
 
-    // Scroll the page slightly to trigger the layout
+    // Use setTimeout to trigger the scroll in the next event loop cycle
+    setTimeout(() => {
+        window.scrollBy(0, 1); // Scroll the page slightly to trigger the layout
+    }, 0);
 }
+
 
 
 
