@@ -23,9 +23,11 @@
             transform: translate(-50%, -50%);
             color: white;
             font-weight: bold;
-            opacity: 0; /* Initially hidden */
+            opacity: 0;
+            /* Initially hidden */
             transition: opacity 0.2s ease-in-out;
-            pointer-events: none; /* Prevents the text from blocking clicks on the image */
+            pointer-events: none;
+            /* Prevents the text from blocking clicks on the image */
         }
 
         /* Style the image container with a relative position */
@@ -37,7 +39,7 @@
         .img-container:hover .overlay-text {
             opacity: 1;
         }
-    </style>   
+    </style>
 </head>
 
 <body>
@@ -153,40 +155,44 @@
 
 
             <div class="row justify-content-center align-items-center mb-5">
-                <img src="Media/Logo.png" class="rounded-circle mt-2 img-fluid" data-toggle="tooltip" data-placement="bottom" title="Change Profile Picture" id="profile-picture"
-                     style="height: 300px; width: 300px; border: 1px solid #D3D3D3; background-color: #fff; cursor: pointer;">
-                <input type="file" id="profile-picture-input" style="display: none;">
-                    <div class="col-md-7">
-                        <div class="table-responsive col-md-8 ms-5" style="background-color: #fff; border: 1px solid #D3D3D3;" id="userInfo">
-                            <table class="table table-hover section-info">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" style="width: 40%;">Username</th>
-                                        <td scope="row" style="width: 40%;" id="username"></td>
+                <img src="Media/Logo.png" class="rounded-circle mt-2 img-fluid" id="profilePicture"
+                    style="height: 300px; width: 300px; border: 1px solid #D3D3D3; background-color: #fff; cursor: pointer;" title="Click to change profile picture"> 
+                <input type="file" id="ProfilePictureInput" style="display: none;">
+                
 
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Email Address</th>
-                                        <td scope="row" id="email"></td>
+                <div class="col-md-7">
+                    <div class="table-responsive col-md-8 ms-5"
+                        style="background-color: #fff; border: 1px solid #D3D3D3;" id="userInfo">
+                        <table class="table table-hover section-info">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 40%;">Username</th>
+                                    <td scope="row" style="width: 40%;" id="username"></td>
 
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Total Number of Books Rented</th>
-                                        <td scope="row" id="totalBooksRented"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email Address</th>
+                                    <td scope="row" id="email"></td>
 
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
+                                </tr>
+                                <tr>
+                                    <th scope="row">Total Number of Books Rented</th>
+                                    <td scope="row" id="totalBooksRented"></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    
+
                 </div>
+
+            </div>
             <div class="col-md-10 mx-auto section-title mt-3 mb-3">
                 Book Rental History
             </div>
 
-            <div class="table-responsive col-md-10 mx-auto" style="background-color: #fff; border: 1px solid #D3D3D3;" id="bookRentalHistory">
+            <div class="table-responsive col-md-10 mx-auto" style="background-color: #fff; border: 1px solid #D3D3D3;"
+                id="bookRentalHistory">
 
                 <table class="table table-hover section-info">
                     <thead>
@@ -198,7 +204,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                     </tbody>
                 </table>
             </div>

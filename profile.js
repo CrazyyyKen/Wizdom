@@ -109,12 +109,12 @@ $(document).ready(function () {
     displayStoredImage();
 
     // Add click event handler to trigger file input
-    $('#profile-picture').click(function () {
-        $('#profile-picture-input').click();
+    $('#profilePicture').click(function () {
+        $('#ProfilePictureInput').click();
     });
 
     // Add change event handler for file input
-    $('#profile-picture-input').change(function () {
+    $('#ProfilePictureInput').change(function () {
         // Handle the selected file here
         const selectedFile = this.files[0];
 
@@ -122,12 +122,12 @@ $(document).ready(function () {
             const reader = new FileReader();
             reader.onload = function (e) {
                 const imageData = e.target.result;
-                $('#profile-picture').attr('src', imageData);
+                $('#profilePicture').attr('src', imageData);
 
                 // Store the image data in local storage
                 localStorage.setItem('profileImage', imageData);
 
-                alert('Profile picture selected: ' + selectedFile.name);
+                alert('Profile picture will be changed.');
             };
             reader.readAsDataURL(selectedFile);
         }

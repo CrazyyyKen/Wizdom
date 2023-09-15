@@ -8,6 +8,10 @@ body {
 	font-family: Gidole !important;
 }
 
+#profilePicture:hover{
+	opacity: 0.6;
+}
+
 #exploreWebSection .card-title {
 	font-size: 30px;
 }
