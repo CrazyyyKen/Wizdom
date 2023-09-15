@@ -113,10 +113,10 @@ displayRentalHistory();
 
 $(document).ready(function () {
     const userKey = getUserKey(); // Get the user's key (email) from session storage
+    userProfilePicKey = `${userKey}_profilepic`;
 
     if (userKey) {
         // User key is available, you can use it here
-        console.log('User key:', userKey);
 
         const userDataArrayJSON = localStorage.getItem('userDataArray');
         const userDataArray = JSON.parse(userDataArrayJSON);
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
         if (matchingUserData) {
             // Load the profile picture from local storage
-            loadProfilePicture(userKey);
+            loadProfilePicture(userProfilePicKey);
 
             // Add click event handler to trigger file input
             $('#profilePicture').click(function () {
@@ -145,7 +145,7 @@ $(document).ready(function () {
                         $('#profilePicture').attr('src', imageData);
 
                         // Store the image data in local storage and user data
-                        storeProfilePicture(userKey, imageData);
+                        storeProfilePicture(userProfilePicKey, imageData);
 
                         alert('Profile picture has been changed and saved.');
                     };
@@ -173,4 +173,4 @@ function loadProfilePicture(userEmail) {
 }
 
 // Call the function to load the profile picture when the page loads
-loadProfilePicture(userKey);
+loadProfilePicture(userProfilePicKey);
