@@ -2,14 +2,24 @@
 function fetchBookData(callback) {
     const githubRawUrl = "https://raw.githubusercontent.com/CrazyyyKen/Wizdom/main/json/books.json";
 
-    fetch(githubRawUrl, {
-        method: 'GET'
-    })
-        .then(response => response.json())
-        .then(data => callback(data))
-        .catch(error => console.error('Error fetching book data:', error));
-
+    $.ajax({
+        url: githubRawUrl,
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            callback(data);
+        },
+        error: function (error) {
+            console.error('Error fetching book data:', error);
+        }
+    });
 }
+
+// Example of how to use the fetchBookData function
+fetchBookData(function (data) {
+    // Handle the fetched data here
+    console.log(data);
+});
 
 // Generate book container
 function generateBook(bookData, bookDescription) {
