@@ -1,30 +1,31 @@
-window.sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
+// // Delay the initialization of ScrollReveal until after the initial scroll
+// window.addEventListener("scroll", function initScrollReveal() {
+//     // Remove the scroll event listener to prevent further delays
+//     window.removeEventListener("scroll", initScrollReveal);
+    
+//     // Initialize ScrollReveal
+//     const sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
   
-  sr.reveal('#exploreSection .container-fluid', {
-    duration: 1500,
-    origin: 'top',
-    distance: '130px',
-
-    // Set this to true to repeat the animation
-    // Set the delay between repeats in milliseconds (optional)
-  });
-  sr.reveal('#historySection .container-fluid', {
-    duration: 1500,
-    origin: 'top',
-    distance: '130px',
-
-    // Set this to true to repeat the animation
-    // Set the delay between repeats in milliseconds (optional)
-  });
+//     sr.reveal('#exploreSection .container-fluid', {
+//       duration: 1500,
+//       origin: 'top',
+//       distance: '130px',
+//     });
   
-  sr.reveal('#thrillerSection .container-fluid', {
-    duration: 800,
-    origin: 'top',
-    distance: '130px',
+//     sr.reveal('#historySection .container-fluid', {
+//       duration: 1500,
+//       origin: 'top',
+//       distance: '130px',
+//     });
+  
+//     sr.reveal('#thrillerSection .container-fluid', {
+//       duration: 800,
+//       origin: 'top',
+//       distance: '130px',
+//     });
+//   });
 
-    // Set this to true to repeat the animation
-    // Set the delay between repeats in milliseconds (optional)
-  });
+  
 
 
 // Function to toggle the visibility of the sections based on screen width
@@ -45,7 +46,6 @@ function toggleSections(categoryId, smallCategoryId, breakpoint) {
     }
 
     // Scroll the page slightly to trigger the layout
-    window.scrollBy(0, 1);
 }
 
 
@@ -172,7 +172,7 @@ function addToBag(bookName, bookCoverSrc) {
                 });
 
                 if (currentDate < new Date(bookHistory.dueDate)) {
-                    alert(`You can't add "${bookName}" to your bag. Due date has not passed.`);
+                    alert(`You can't add "${bookName}" to your bag as it's still under rental duration.`);
                     return;
                 }
             }
@@ -184,7 +184,7 @@ function addToBag(bookName, bookCoverSrc) {
         // Store the updated user's bag in local storage
         localStorage.setItem(userKey, JSON.stringify(userBag));
 
-        alert(`Added "${bookName}" to your bag.`);
+        alert(`${bookName}" is added to your bag.`);
     }
 }
 

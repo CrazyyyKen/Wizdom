@@ -8,46 +8,58 @@ function getUserKey() {
     return null; // Return null if userData is not found in session storage
 }
 
-/// Function to retrieve and display books in the table
 function displayBooksInTable() {
     const userKey = getUserKey();
     const userBagJSON = localStorage.getItem(userKey);
+    const tableBody = document.querySelector("#bagTableBody");
+    const grandTotalElement = document.getElementById("grandTotal"); // Get the grand total element
+
+    // Clear the table before adding books and reset the grand total
+    tableBody.innerHTML = '';
+    let grandTotal = 0;
 
     if (userBagJSON) {
         const userBag = JSON.parse(userBagJSON);
-        const tableBody = document.querySelector("#bagTableBody");
-        const grandTotalElement = document.getElementById("grandTotal"); // Get the grand total element
 
-        // Clear the table before adding books
-        tableBody.innerHTML = "";
-
-        let grandTotal = 0; // Initialize grand total to 0
-
-        // Iterate through each book in the user's bag
+        // Iterate through each book in the user's bag and add to the table
         userBag.forEach((book, index) => {
             const row = document.createElement("tr");
             row.innerHTML = `
                 <th scope="row">${index + 1}</th>
                 <td><img src="${book.coverSrc}" alt="${book.name} Cover" style="height: 100px; width: auto;"></td>
                 <td>${book.name}</td>
-                <td>RM25</td>
+                <td>RM10</td>
                 <td>
                     <button type="button" class="btn home-btn remove-button" data-index="${index}">
                         Remove
                     </button>
                 </td>
             `;
-
             tableBody.appendChild(row);
 
-            grandTotal += 25; // Add book price to grand total (assuming each book costs RM25)
+            grandTotal += 10; // Assuming each book costs RM10
         });
-
-        // Update the grand total element with the calculated total
-        grandTotalElement.textContent = `RM${grandTotal}`;
     }
+
+    // Update the grand total element with the calculated total
+    grandTotalElement.textContent = `RM${grandTotal}`;
+
+    // Display the book names in the modal
+    const bookNamesElement = document.getElementById("bookNames");
+    bookNamesElement.textContent = userBag.map(book => book.name).join(", ");
 }
 
+
+function calculateTotalPrice(userBag) {
+    let totalPrice = 0;
+
+    // Calculate the total price based on the number of books
+    if (userBag && Array.isArray(userBag)) {
+        totalPrice = userBag.length * 10; // Assuming each book costs RM10
+    }
+
+    return totalPrice;
+}
 
 
 
@@ -87,11 +99,21 @@ checkoutButton.addEventListener("click", () => {
     const userBagJSON = localStorage.getItem(userKey);
 
     if (!userBagJSON || JSON.parse(userBagJSON).length === 0) {
-        alert("Your bag is empty. Add books before checking out.");
+        alert("Your bag is empty!");
     } else {
         // Show the "CheckOutModal" using Bootstrap modal methods
         const checkOutModal = new bootstrap.Modal(document.getElementById("checkOutModal"));
         checkOutModal.show();
+
+        // Display the book names in the modal
+        const userBag = JSON.parse(userBagJSON);
+        const bookNamesElement = document.getElementById("bookNamesModal");
+        bookNamesElement.innerHTML = userBag.map(book => book.name + "<br>").join("");
+
+        // Calculate and display the total price in the modal
+        const totalPriceElement = document.getElementById("totalPrice");
+        const totalPrice = calculateTotalPrice(userBag);
+        totalPriceElement.textContent = `Total Price: RM${totalPrice}`;
 
         // Get the current date and time
         const currentDateTime = new Date().toLocaleString();
