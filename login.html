@@ -1,159 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Website title and favicon -->
     <title>Sign In | Wizdom</title>
-    <link rel="icon" type="image/x-icon" href="Media/Logo.png">
+    <link rel="icon" type="image/x-icon" href="Media/Logo.png" />
 
     <!-- CSS sources -->
-    <link href="styles.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
 
-    </head>
-    
-<body>
-    <section class="section fade-in-section" style="background-image: radial-gradient(circle, #F5F2EA, #EAE0D5, #D0C7C2, #C6AC8F, #896B60); background-color: #EAE0D5;">
-        <div class="container-fluid">
-
-            <div class="col-md-7 mx-auto"  id="signInSection">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-md-5">
-                        <img src="Media/LogoWithoutBackground.png" height="400px" width="400px" class="img-fluid">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-12 text-center section-title pb-3">
-                            Sign In
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control text-start" id="signInEmail"
-                                    placeholder="name@example.com" autofocus>
-                                <label for="floatingInput">Email address</label>
-                                <div class="invalid-feedback" id="signInEmailRequirement" style="display: none;">
-                                    Please enter a valid email address (e.g., name@example.com).
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-floating">
-                                <input type="password" class="form-control text-start" id="signInPassword"
-                                    placeholder="Password">
-                                <label for="floatingPassword"s>
-                                    Password
-                                </label>
-                                <div class="invalid-feedback" id="signInPasswordRequirement" style="display: none;">
-                                    Incorrect password!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-center">
-                            <a href="home.html">
-                                <button type="button" class="btn home-btn mt-3" id="signInButton">
-                                    Sign in
-                                </button>
-                            </a>
-                        </div>
-                        <div class="col-md-12 pt-3 pb-3 text-center section-info">
-                            Don't have an account?
-                            <a href="#" id="signUpLink">
-                                Sign up
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  <body>
+    <section
+      class="section fade-in-section"
+      style="
+        background-image: radial-gradient(
+          circle,
+          #f5f2ea,
+          #eae0d5,
+          #d0c7c2,
+          #c6ac8f,
+          #896b60
+        );
+        background-color: #eae0d5;
+      "
+    >
+      <div class="container-fluid">
+        <div class="col-md-7 mx-auto" id="signInSection">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-5">
+              <img
+                src="Media/LogoWithoutBackground.png"
+                height="400px"
+                width="400px"
+                class="img-fluid"
+              />
             </div>
-
-
-            <div class="col-md-7 mx-auto" id="signUpSection"
-                style="opacity: 0; display: none;">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-md-5">
-                        <img src="Media/LogoWithoutBackground.png" height="400px" width="400px" class="img-fluid">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-12 text-center section-title pb-3">
-                            Sign Up
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control text-start" placeholder="Username" id ="signUpUsername" aria-label="username" aria-describedby="basic-addon1">
-                                <label for="floatingInput">Username</label>
-                                <div class="invalid-feedback" id="emptyUsername">
-                                    Username cannot be empty.
-                                </div>
-                                <div class="invalid-feedback" id="duplicateUsername">
-                                    Username already exists.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control text-start" id="signUpEmail"
-                                    placeholder="name@example.com" required>
-                                <label for="floatingInput">Email address</label>
-                                <div class="invalid-feedback" id="emailRequirement">
-                                    Invalid email format. Please enter a valid email.
-                                </div>
-                                <div class="invalid-feedback" id="duplicateEmail">
-                                    Email already exists.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-floating">
-                                <input type="password" class="form-control text-start" id="signUpPassword"
-                                    placeholder="Password" required>
-                                <label for="floatingPassword">
-                                    Password
-                                </label>
-                                <div class="invalid-feedback" id="passwordRequirement">
-                                    At least 8 characters contain at least one number & one alphabet
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-center">
-                            <a href="#">
-                                <button type="button" class="btn home-btn mt-3" id="signUpButton">
-                                    Sign up
-                                </button>
-                            </a>
-                        </div>
-                        <div class="col-md-12 pt-3 pb-3 text-center section-info">
-                            Already have an account?
-                            <a href="#" id="signInLink">
-                                Sign in
-                            </a>
-                        </div>
-                    </div>
+            <div class="col-md-6">
+              <div class="col-md-12 text-center section-title pb-3">
+                Sign In
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control text-start"
+                    id="signInEmail"
+                    placeholder="name@example.com"
+                    autofocus
+                  />
+                  <label for="floatingInput">Email address</label>
+                  <div
+                    class="invalid-feedback"
+                    id="signInEmailRequirement"
+                    style="display: none"
+                  >
+                    Please enter a valid email address (e.g., name@example.com).
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <input
+                    type="password"
+                    class="form-control text-start"
+                    id="signInPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword" s> Password </label>
+                  <div
+                    class="invalid-feedback"
+                    id="signInPasswordRequirement"
+                    style="display: none"
+                  >
+                    Incorrect password!
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 text-center">
+                <a href="home.html">
+                  <button
+                    type="button"
+                    class="btn home-btn mt-3"
+                    id="signInButton"
+                  >
+                    Sign in
+                  </button>
+                </a>
+              </div>
+              <div class="col-md-12 pt-3 pb-3 text-center section-info">
+                Don't have an account?
+                <a href="#" id="signUpLink"> Sign up </a>
+              </div>
             </div>
+          </div>
         </div>
+
+        <div
+          class="col-md-7 mx-auto"
+          id="signUpSection"
+          style="opacity: 0; display: none"
+        >
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-5">
+              <img
+                src="Media/LogoWithoutBackground.png"
+                height="400px"
+                width="400px"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-12 text-center section-title pb-3">
+                Sign Up
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control text-start"
+                    placeholder="Username"
+                    id="signUpUsername"
+                    aria-label="username"
+                    aria-describedby="basic-addon1"
+                  />
+                  <label for="floatingInput">Username</label>
+                  <div class="invalid-feedback" id="emptyUsername">
+                    Username cannot be empty.
+                  </div>
+                  <div class="invalid-feedback" id="duplicateUsername">
+                    Username already exists.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control text-start"
+                    id="signUpEmail"
+                    placeholder="name@example.com"
+                    required
+                  />
+                  <label for="floatingInput">Email address</label>
+                  <div class="invalid-feedback" id="emailRequirement">
+                    Invalid email format. Please enter a valid email.
+                  </div>
+                  <div class="invalid-feedback" id="duplicateEmail">
+                    Email already exists.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <input
+                    type="password"
+                    class="form-control text-start"
+                    id="signUpPassword"
+                    placeholder="Password"
+                    required
+                  />
+                  <label for="floatingPassword"> Password </label>
+                  <div class="invalid-feedback" id="passwordRequirement">
+                    At least 8 characters contain at least one number & one
+                    alphabet
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 text-center">
+                <a href="#">
+                  <button
+                    type="button"
+                    class="btn home-btn mt-3"
+                    id="signUpButton"
+                  >
+                    Sign up
+                  </button>
+                </a>
+              </div>
+              <div class="col-md-12 pt-3 pb-3 text-center section-info">
+                Already have an account?
+                <a href="#" id="signInLink"> Sign in </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-
-
-
-    
     <!-- JavaScripts -->
     <!-- Bootstrap 5 JavaScript library -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- jQuery library from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="styles.js"></script>
     <script src="login.js"></script>
-    
-
-
-
-</body>
-
+  </body>
 </html>
