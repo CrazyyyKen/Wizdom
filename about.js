@@ -2,7 +2,7 @@ window.sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
 window.srSpecial = ScrollReveal({ reset: true, viewFactor: 0.1 });
 srSpecial.reveal("#whoIsWizdomSection img", {
   duration: 1500,
-  origin: "left",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
@@ -10,7 +10,7 @@ srSpecial.reveal("#whoIsWizdomSection img", {
 });
 srSpecial.reveal(".welcome-text-column", {
   duration: 1000,
-  origin: "right",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
@@ -26,7 +26,7 @@ sr.reveal("video", {
 });
 sr.reveal("#missionCard", {
   duration: 1000,
-  origin: "right",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
@@ -35,7 +35,7 @@ sr.reveal("#missionCard", {
 
 sr.reveal("#visionCard", {
   duration: 1000,
-  origin: "left",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
@@ -55,7 +55,7 @@ sr.reveal("#founderSection .home-btn", {
 
 sr.reveal("#founder1, #founder2", {
   duration: 1000,
-  origin: "left",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
@@ -64,7 +64,7 @@ sr.reveal("#founder1, #founder2", {
 
 sr.reveal("#founder3, #founder4", {
   duration: 1000,
-  origin: "right",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation

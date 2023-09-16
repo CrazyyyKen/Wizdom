@@ -2,7 +2,7 @@ window.sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
 
 sr.reveal("#welcomeSection .welcome-text-column", {
   duration: 1500,
-  origin: "right",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
@@ -10,7 +10,7 @@ sr.reveal("#welcomeSection .welcome-text-column", {
 });
 sr.reveal(".intro-book", {
   duration: 1500,
-  origin: "left",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
@@ -35,7 +35,7 @@ sr.reveal("#latestPostSection .section-title", {
 });
 sr.reveal("#facebookPost", {
   duration: 800,
-  origin: "left",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
@@ -43,7 +43,7 @@ sr.reveal("#facebookPost", {
 });
 sr.reveal("#instaPost", {
   duration: 800,
-  origin: "right",
+  origin: "top",
   distance: "130px",
 
   // Set this to true to repeat the animation
