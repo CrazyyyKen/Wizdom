@@ -58,10 +58,10 @@ function logoutAndRedirect() {
 
 
 window.addEventListener('load', () => {
-    clearUrlHash(); // Clear URL hash on page load
     updateNavLinksHref(1000); // Update navigation links on page load and window resize
     handleScroll(); // Check scroll position on page load
     noBack(); // Prevent going back on page load
+    clearUrlHash(); // Clear URL hash on page load
 });
 
 // Listen for the scroll event and call the handleScroll function
