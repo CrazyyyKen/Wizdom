@@ -157,9 +157,3 @@ $(document).ready(function () {
     });
   });
 });
-
-$("#instaLink").socialSharingPlugin({
-  urlShare: window.location.href,
-  description: $("meta[name=description]").attr("content"),
-  title: $("title").text(),
-});
