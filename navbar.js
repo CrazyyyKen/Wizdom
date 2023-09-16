@@ -1,10 +1,3 @@
-// Function to clear the URL hash on page load
-function clearUrlHash() {
-  if (window.location.hash !== "") {
-    history.replaceState(null, document.title, window.location.pathname);
-  }
-}
-
 // Function to update the navigation links based on screen width
 function updateNavLinksHref(breakpoint) {
   // Get the screen width
@@ -58,21 +51,22 @@ function logoutAndRedirect() {
   window.location.replace("login.html");
 }
 
+// Attach event listeners
 window.addEventListener("load", () => {
   updateNavLinksHref(1000); // Update navigation links on page load and window resize
   handleScroll(); // Check scroll position on page load
   noBack(); // Prevent going back on page load
-  clearUrlHash(); // Clear URL hash on page load
-});
 
-// Listen for the scroll event and call the handleScroll function
-window.addEventListener("scroll", handleScroll);
+  // Listen for the scroll event and call the handleScroll function
+  window.addEventListener("scroll", handleScroll);
 
-// Attach the logoutAndRedirect function to the button click event
-document
-  .getElementById("logoutLink")
-  .addEventListener("click", logoutAndRedirect);
+  // Attach the logoutAndRedirect function to the button click event
+  document
+    .getElementById("logoutLink")
+    .addEventListener("click", logoutAndRedirect);
 
-window.addEventListener("resize", () => {
-  updateNavLinksHref(1000); // Call it when the window is resized
+  // Listen for window resize events
+  window.addEventListener("resize", () => {
+    updateNavLinksHref(1000); // Call it when the window is resized
+  });
 });
