@@ -49,7 +49,14 @@ sr.reveal("#instaPost", {
   // Set this to true to repeat the animation
   // Set the delay between repeats in milliseconds (optional)
 });
+sr.reveal("#latestPostSection .home-btn", {
+  duration: 800,
+  origin: "top",
+  distance: "130px",
 
+  // Set this to true to repeat the animation
+  // Set the delay between repeats in milliseconds (optional)
+});
 // Add other ScrollReveal animations for other elements as needed
 
 // Function to check for overflow and apply the class if needed
