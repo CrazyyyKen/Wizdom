@@ -155,7 +155,7 @@ $(document).ready(function () {
         }
     } else {
         // User key is not available in session storage
-        console.log('User key not found. Please sign in again.');
+        alert("Please sign in first!")
         // You can also redirect to the login page if needed
         window.location.href = 'login.html';
     }

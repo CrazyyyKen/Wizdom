@@ -98,6 +98,8 @@ $(document).ready(function() {
   });
 
   $('#signInButton').on('click', function(event) {
+    $("#signInEmailRequirement").show();
+    $("#signInPasswordRequirement").show();
     event.preventDefault();
     signIn();
   });
