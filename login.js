@@ -129,6 +129,7 @@ function saveData() {
 
   if (!emailValid) {
     $("#signUpEmail").val("");
+    $("#duplicateEmail").hide();
     $("#emailRequirement").show();
     hasError = true;
   } else {
@@ -145,6 +146,7 @@ function saveData() {
 
   if (!username) {
     $("#emptyUsername").show();
+    $("#duplicateUsername").hide();
     hasError = true;
   } else {
     $("#emptyUsername").hide();
@@ -169,6 +171,7 @@ function saveData() {
   if (userExists) {
     $("#duplicateUsername").show();
     $("#signUpUsername").val("");
+
     return;
   } else {
     $("#duplicateUsername").hide();
@@ -194,6 +197,12 @@ function saveData() {
   // Save the updated user data array to local storage
   localStorage.setItem("userDataArray", JSON.stringify(userDataArray));
   alert("Signed up successfully!");
+  $("#duplicateEmail").hide();
+  $("#emailRequirement").hide();
+  $("#duplicateUsername").hide();
+  $("#emptyUsername").hide();
+  $("#passwordRequirement").hide();
+
   window.location.href = "login.html"; // Redirect to the login page
 }
 
