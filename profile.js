@@ -153,12 +153,7 @@ $(document).ready(function () {
                 }
             });
         }
-    } else {
-        // User key is not available in session storage
-        alert("Please sign in first!")
-        // You can also redirect to the login page if needed
-        window.location.href = 'login.html';
-    }
+    } 
 
 });
 

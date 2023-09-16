@@ -90,18 +90,18 @@ $(document).ready(function() {
     }
   });
  
-  $("#signInPassword").on('keydown', function(event) {
-    if (event.keyCode === 13) { 
-      event.preventDefault(); 
-      signIn();
+  $('#signInPassword').on('keydown', function(event) {
+    if (event.keyCode === 13) { // Check if Enter key is pressed (key code 13)
+      event.preventDefault(); // Prevent the default form submission
+      signIn(); // Call the signIn function
+
     }
   });
-
+  
+  // Add event listener to the Sign-In button (optional, for button click)
   $('#signInButton').on('click', function(event) {
-    $("#signInEmailRequirement").show();
-    $("#signInPasswordRequirement").show();
-    event.preventDefault();
-    signIn();
+    event.preventDefault(); // Prevent the default form submission
+    signIn(); // Call the signIn function when the button is clicked
   });
 
   $('#signUpLink').on('click', function(event) {
@@ -213,7 +213,6 @@ else {
 
 //for sign in
 function signIn() {
-  
   // Get email and password input values
   const email = $("#signInEmail").val();
   const password = $("#signInPassword").val();
@@ -222,39 +221,35 @@ function signIn() {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
   const userDataArrayJSON = localStorage.getItem("userDataArray");
-  const userDataArray = JSON.parse(userDataArrayJSON);
+  const userDataArray = JSON.parse(userDataArrayJSON) || []; // Use an empty array if localStorage is empty
 
   // Check if there is a user with matching email and password
   const matchingUser = userDataArray.find(user => user.email === email && user.password === password);
   const matchingEmail = userDataArray.find(user => user.email === email);
   const matchingPassword = userDataArray.find(user => user.password === password);
+
   if (matchingUser) {
-  const userData = [email, password];
-  sessionStorage.setItem("userData", JSON.stringify(userData));
+    const userData = [email, password];
+    sessionStorage.setItem("userData", JSON.stringify(userData));
 
-  //redirect to home page after successful log in
-  window.location.href = "home.html"; 
-}
-
-
-  else if (!matchingEmail && email == email.match(emailPattern)){
-    alert ("You haven't signed up before. Please sign up first.");
-    if (email == email.match(emailPattern)){
+    // Redirect to home page after successful log in
+    window.location.href = "home.html"; 
+  } 
+  else if (!matchingEmail && email == email.match(emailPattern)) {
+    alert("You haven't signed up before. Please sign up first.");
+    if (email == email.match(emailPattern)) {
       $("#signInEmailRequirement").hide();
       $("#signInPasswordRequirement").hide();
     }
     $("#signInEmail").val("");
     $("#signInPassword").val("");
     $("#signInEmail").focus();
-  }
-
- 
-  else if (matchingEmail && !matchingPassword){
+  } 
+  else if (matchingEmail && !matchingPassword) {
     $("#signInEmailRequirement").hide();
     $("#signInPasswordRequirement").show();
     $("#signInPassword").val("");
-  }
-
+  } 
   else {
     // Incorrect email format and password
     $("#signInEmailRequirement").show();
@@ -263,5 +258,4 @@ function signIn() {
     $("#signInPassword").val("");
     $("#signInEmail").focus();
   }
-  
 }
