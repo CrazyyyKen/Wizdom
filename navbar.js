@@ -1,25 +1,3 @@
-// Get navbar element
-const navbar = document.getElementById("navbar");
-
-// Function to handle scroll event
-function handleScroll() {
-
-    // Check the scroll position
-    if (window.scrollY > 10) {
-
-        // Add the "navbar-scrolled" class to change the color
-        navbar.classList.add("navbar-scrolled");
-
-    } else {
-
-        // Remove the "navbar-scrolled" class
-        navbar.classList.remove("navbar-scrolled");
-
-    }
-}
-
-// Listen for the scroll event and call the handleScroll function
-window.addEventListener("scroll", handleScroll);
 // Function to clear the URL hash on page load
 function clearUrlHash() {
     if (window.location.hash !== '') {
@@ -27,8 +5,7 @@ function clearUrlHash() {
     }
 }
 
-// Call the function when the page loads
-window.addEventListener('load', clearUrlHash);
+// Function to update the navigation links based on screen width
 function updateNavLinksHref(breakpoint) {
     // Get the screen width
     const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -50,7 +27,20 @@ function updateNavLinksHref(breakpoint) {
         thrillerLink.href = `categories.html#thrillerSection`;
     }
 }
-updateNavLinksHref(1000);
+
+// Function to handle scroll event
+function handleScroll() {
+    // Check the scroll position
+    if (window.scrollY > 10) {
+        // Get navbar element
+        const navbar = document.getElementById("navbar");
+        // Add the "navbar-scrolled" class to change the color
+        navbar.classList.add("navbar-scrolled");
+    } else {
+        // Remove the "navbar-scrolled" class
+        navbar.classList.remove("navbar-scrolled");
+    }
+}
 
 // Function to prevent going back
 function noBack() {
@@ -58,15 +48,29 @@ function noBack() {
 }
 
 // Function to handle logout
-function logoutAndPreventBack() {
+function logoutAndRedirect() {
     // Perform logout actions here
 
-    // Prevent going back
-    noBack();
 
     // Redirect to the login page
     window.location.replace('login.html');
 }
 
-// Attach the logoutAndPreventBack function to the button click event
-document.getElementById('logoutLink').addEventListener('click', logoutAndPreventBack);
+
+window.addEventListener('load', () => {
+    clearUrlHash(); // Clear URL hash on page load
+    updateNavLinksHref(1000); // Update navigation links on page load and window resize
+    handleScroll(); // Check scroll position on page load
+    noBack(); // Prevent going back on page load
+});
+
+// Listen for the scroll event and call the handleScroll function
+window.addEventListener("scroll", handleScroll);
+
+// Attach the logoutAndRedirect function to the button click event
+document.getElementById('logoutLink').addEventListener('click', logoutAndRedirect);
+
+
+window.addEventListener('resize', () => {
+    updateNavLinksHref(1000); // Call it when the window is resized
+});
