@@ -23,7 +23,8 @@ body {
 }
 
 #missionVisionSection .card,
-#workSection .card {
+#workSection .card,
+#workSection iframe {
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -33,6 +34,26 @@ body {
 	/* Replace 'your-color-here' with your desired background color */
 	transition: background-color 0.2s ease-in-out;
 
+}
+.owl-container {
+    width: 400px;
+    height: 300px;
+    position: relative;
+}
+
+#left-eye,
+#right-eye {
+    transform-origin: center center;
+    animation: blink 2s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0.1);
+    }
 }
 
 
@@ -46,7 +67,8 @@ body {
 #signInLink,
 #contactUsLink,
 #rulesAndRegulationsLink,
-#founderSection a:not(#founderSection .btn) {
+#founderSection a:not(#founderSection .btn),
+#howItWorksLink {
 	text-decoration: none !important;
 	color: #896B60 !important;
 	transition: color 0.2s ease-in-out;
@@ -74,8 +96,13 @@ body {
 #facebookLink:hover,
 #instaLink:hover,
 #founderSection a:not(#founderSection .btn):hover,
-#footer .link-dark:hover {
+#footer .link-dark:hover,
+#howItWorksLink:hover {
 	color: #6C4A3F !important;
+}
+
+#socialMediaShare svg:hover {
+	fill: #6C4A3F !important;
 }
 
 #signUpLink:focus,
@@ -89,7 +116,8 @@ body {
 #facebookLink:focus,
 #instaLink:focus,
 #founderSection a:not(#founderSection .btn):focus,
-#footer .link-dark:focus {
+#footer .link-dark:focus,
+#howItWorksLink:focus {
 	color: #4A332D !important;
 }
 
@@ -182,7 +210,8 @@ body {
 .home-btn:focus,
 .home-btn:active,
 .accordion-button:active,
-.accordion-button:focus {
+.accordion-button:focus,
+.accordion-button[aria-expanded="true"] {
 	color: #000000 !important;
 	background-color: #C6AC8F !important;
 	box-shadow: none !important;
@@ -279,7 +308,7 @@ body {
 /* Navs color when scrolled */
 .navbar-scrolled .navbar-brand,
 .navbar-scrolled .nav-link,
-.navbar-scrolled .dropdown-item{
+.navbar-scrolled .dropdown-item {
 	color: #fff !important;
 	transition: color 0.2s ease-in-out;
 }
@@ -638,6 +667,7 @@ span {
 	#instructionSection .col-md-4 {
 		flex-basis: calc(50% - 20px);
 	}
+
 	#exploreWebSection .col-md-4 {
 		flex-basis: calc(50% - 20px);
 	}
@@ -648,6 +678,7 @@ span {
 	#instructionSection .col-md-4 {
 		flex-basis: calc(100% - 20px);
 	}
+
 	#exploreWebSection .col-md-4 {
 		flex-basis: calc(100% - 20px);
 	}

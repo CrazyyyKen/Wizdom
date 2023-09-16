@@ -205,7 +205,7 @@ else {
 
   // Save the updated user data array to local storage
   localStorage.setItem("userDataArray", JSON.stringify(userDataArray));
-  alert("Data saved successfully!");
+  alert("Signed up successfully!");
   window.location.href = "login.html"; // Redirect to the login page
 }
 
@@ -265,4 +265,3 @@ function signIn() {
   }
   
 }
-

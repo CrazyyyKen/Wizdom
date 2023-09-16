@@ -25,7 +25,7 @@
       // Set this to true to repeat the animation
       // Set the delay between repeats in milliseconds (optional)
     });
-    sr.reveal('.mission-column', {
+    sr.reveal('#missionCard', {
       duration: 1000,
       origin: 'right',
       distance: '130px',
@@ -34,7 +34,7 @@
       // Set the delay between repeats in milliseconds (optional)
     });
   
-    sr.reveal('.vision-column', {
+    sr.reveal('#visionCard', {
       duration: 1000,
       origin: 'left',
       distance: '130px',
@@ -42,13 +42,7 @@
       // Set this to true to repeat the animation
       // Set the delay between repeats in milliseconds (optional)
     });
-    sr.reveal('#missionVisionSection .home-btn', {
-        duration: 1000,
-        origin: 'bottom',
-        distance: '130px',
     
-    
-      });
       sr.reveal('#founderSection .section-title', {
         duration: 1000,
         origin: 'top',
@@ -84,6 +78,18 @@
       // Set this to true to repeat the animation
       // Set the delay between repeats in milliseconds (optional)
     });
+
+    
+
+    sr.reveal('#missionVisionSection .btn', {
+      duration: 1000,
+      origin: 'top',
+      distance: '130px',
+  
+      // Set this to true to repeat the animation
+      // Set the delay between repeats in milliseconds (optional)
+    });
+  
   
     
 // Function to check for overflow and apply the class if needed

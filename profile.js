@@ -147,21 +147,24 @@ $(document).ready(function () {
                         // Store the image data in local storage and user data
                         storeProfilePicture(userProfilePicKey, imageData);
 
-                        alert('Profile picture has been changed and saved.');
+                        alert('Profile picture has been changed and saved successfully.');
                     };
                     reader.readAsDataURL(selectedFile);
                 }
             });
         }
+<<<<<<< HEAD
     } else {
         // User key is not available in session storage
         alert("Please sign in first!")
         // You can also redirect to the login page if needed
         window.location.href = 'login.html';
     }
+=======
+    } 
 
-    // Initialize Bootstrap tooltip
-    $('[data-toggle="tooltip"]').tooltip();
+>>>>>>> a7ea3e4abefefa43008ffaf06d96c045086a91b1
+
 });
 
 // Function to load the profile picture from local storage

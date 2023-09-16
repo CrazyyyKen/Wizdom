@@ -1,3 +1,59 @@
+// Delay the initialization of ScrollReveal until after the initial scroll
+window.addEventListener("scroll", function initScrollReveal() {
+    // Remove the scroll event listener to prevent further delays
+    window.removeEventListener("scroll", initScrollReveal);
+    
+    // Initialize ScrollReveal
+    const sr = ScrollReveal({ reset: true, viewFactor: 0.3 });
+  
+    sr.reveal('#exploreSection .container-fluid', {
+      duration: 1500,
+      origin: 'top',
+      distance: '130px',
+    });
+  
+    sr.reveal('#historySection .container-fluid', {
+      duration: 1500,
+      origin: 'top',
+      distance: '130px',
+    });
+  
+    sr.reveal('#thrillerSection .container-fluid', {
+      duration: 800,
+      origin: 'top',
+      distance: '130px',
+    });
+  });
+
+  
+
+
+// Function to toggle the visibility of the sections based on screen width
+function toggleSections(categoryId, smallCategoryId, breakpoint) {
+    const categorySection = document.getElementById(categoryId);
+    const smallCategorySection = document.getElementById(smallCategoryId);
+
+    // Get the screen width
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // Determine whether to show the larger or smaller section based on screen width and the specified breakpoint
+    if (screenWidth <= breakpoint) {
+        categorySection.style.display = "none"; // Hide larger section
+        smallCategorySection.style.display = ""; // Remove the display attribute
+    } else {
+        categorySection.style.display = ""; // Remove the display attribute
+        smallCategorySection.style.display = "none"; // Hide smaller section
+    }
+
+    // Use setTimeout to trigger the scroll in the next event loop cycle
+    setTimeout(() => {
+        window.scrollBy(0, 1); // Scroll the page slightly to trigger the layout
+    }, 0);
+}
+
+
+
+
 // Function to fetch book data from the JSON file using a RESTful API
 function fetchBookData(callback) {
     const githubRawUrl = "https://raw.githubusercontent.com/CrazyyyKen/Wizdom/main/json/books.json";
@@ -15,11 +71,6 @@ function fetchBookData(callback) {
     });
 }
 
-// Example of how to use the fetchBookData function
-fetchBookData(function (data) {
-    // Handle the fetched data here
-    console.log(data);
-});
 
 // Generate book container
 function generateBook(bookData, bookDescription) {
@@ -33,6 +84,23 @@ function generateBook(bookData, bookDescription) {
     `;
 }
 
+// Generate book for every class passed into the function and add click event listeners
+function generateBook2(category, className, index) {
+    fetchBookData(data => {
+        const books = data[category];
+        const elements = document.querySelectorAll(`.${className}`);
+
+        elements.forEach((element) => {
+            element.innerHTML = generateBook(books[index], books[index].description);
+            element.addEventListener("click", () => {
+                openModal(books[index].name, books[index].coverSrc, books[index].description);
+            });
+        });
+    });
+}
+
+
+
 // Open modal function
 function openModal(bookName, bookCoverSrc, bookDescription) {
     // Create a new modal
@@ -43,8 +111,8 @@ function openModal(bookName, bookCoverSrc, bookDescription) {
     modalTitle.innerText = bookName;
 
     // Set the book cover image
-    const bookCoverImage = document.querySelector("#bookInfoModal .book-cover");
-    bookCoverImage.innerHTML = `<img src="${bookCoverSrc}" style="height: 100%; width: 100%;" alt="${bookName} Cover">`;
+    const bookCoverImage = document.querySelector("#bookInfoModal .book-cover-img");
+    bookCoverImage.innerHTML = `<img src="${bookCoverSrc}" style="height: 450px; width: auto;" alt="${bookName} Cover" class="img-fluid">`;
 
     // Set the modal content (book description)
     const bookInfoContent = document.querySelector("#bookInfoModal .book-info");
@@ -108,7 +176,7 @@ function addToBag(bookName, bookCoverSrc) {
                 });
 
                 if (currentDate < new Date(bookHistory.dueDate)) {
-                    alert(`You can't add "${bookName}" to your bag. Due date has not passed.`);
+                    alert(`You can't add "${bookName}" to your bag as it's still under rental duration.`);
                     return;
                 }
             }
@@ -120,122 +188,24 @@ function addToBag(bookName, bookCoverSrc) {
         // Store the updated user's bag in local storage
         localStorage.setItem(userKey, JSON.stringify(userBag));
 
-        alert(`Added "${bookName}" to your bag.`);
+        alert(`${bookName}" is added to your bag.`);
     }
 }
 
-
-// Add event listener to the "Add to Bag" button outside of generateBook2
-document.getElementById("bookInfoModal").addEventListener("click", (event) => {
-    if (event.target.classList.contains("btn-primary")) {
-        const bookName = event.target.dataset.bookName;
-        const bookCoverSrc = document.querySelector("#bookInfoModal img").src; // Get the book cover image source
-        addToBag(bookName, bookCoverSrc); // Pass bookCoverSrc instead of book description
-
-        const modal = bootstrap.Modal.getInstance(document.getElementById("bookInfoModal"));
-        modal.hide(); // Close the modal after adding to the bag
-    }
-});
-
-// Generate book for every class passed into the function and add click event listeners
-function generateBook2(category, className, index) {
-    fetchBookData(data => {
-        const books = data[category];
-        const elements = document.querySelectorAll(`.${className}`);
-
-        elements.forEach((element) => {
-            element.innerHTML = generateBook(books[index], books[index].description);
-            element.addEventListener("click", () => {
-                openModal(books[index].name, books[index].coverSrc, books[index].description);
-            });
-        });
+// Function to check for overflow and apply the class if needed
+function checkOverflow(sectionIds) {
+    sectionIds.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+  
+        // Check if the content overflows vertically
+        if (section.scrollHeight > section.clientHeight) {
+            section.classList.add('overflowed');
+        } else {
+            section.classList.remove('overflowed');
+        }
     });
-}
-
-generateBook2("historyBooks", "historyBook1", 0);
-generateBook2("historyBooks", "historyBook2", 1);
-generateBook2("historyBooks", "historyBook3", 2);
-generateBook2("historyBooks", "historyBook4", 3);
-generateBook2("historyBooks", "historyBook5", 4);
-generateBook2("historyBooks", "historyBook6", 5);
-
-generateBook2("thrillerBooks", "thrillerBook1", 0);
-generateBook2("thrillerBooks", "thrillerBook2", 1);
-generateBook2("thrillerBooks", "thrillerBook3", 2);
-generateBook2("thrillerBooks", "thrillerBook4", 3);
-generateBook2("thrillerBooks", "thrillerBook5", 4);
-generateBook2("thrillerBooks", "thrillerBook6", 5);
-
-
-
-
-window.sr = ScrollReveal();
-sr.reveal('#exploreSection .section-title, #historySection .section-title, #thrillerSection .section-title', {
-    duration: 1200,
-    origin: 'top',
-    distance: '130px',
-    viewFactor: 0.3,
-    reset: true, // Set this to true to repeat the animation
-    interval: 1000, // Set the delay between repeats in milliseconds (optional)
-});
-sr.reveal('#exploreSection .section-info, #historySection .section-info, #thrillerSection .section-info', {
-    duration: 1200,
-    origin: 'top',
-    distance: '150px',
-    viewFactor: 0.3,
-    reset: true, // Set this to true to repeat the animation
-    interval: 1000, // Set the delay between repeats in milliseconds (optional)
-});
-sr.reveal('#exploreSection .book-carousel, #historySection .book-carousel, #thrillerSection .book-carousel', {
-    duration: 1200,
-    origin: 'top',
-    distance: '100px',
-    viewFactor: 0.3,
-    reset: true, // Set this to true to repeat the animation
-    interval: 1000, // Set the delay between repeats in milliseconds (optional)
-});
-
-sr.reveal('#exploreSection .home-btn, #historySection .home-btn, #thrillerSection .home-btn', {
-    duration: 1200,
-    origin: 'top',
-    distance: '50px',
-    viewFactor: 0.3,
-    reset: true, // Set this to true to repeat the animation
-    interval: 1000, // Set the delay between repeats in milliseconds (optional)
-});
-
-// Run the checkOverflow function on page load and window resize
-window.addEventListener('load', () => {
-    const sectionIds = ['exploreSection', 'historySection', 'thrillerSection']; // Add IDs of all sections to check
-    checkOverflow(sectionIds);
-  });
+  }
   
-  window.addEventListener('resize', () => {
-    const sectionIds = ['exploreSection', 'historySection', 'thrillerSection']; // Add IDs of all sections to check
-    checkOverflow(sectionIds);
-  });
-  
-  // Function to toggle the visibility of the sections based on screen width
-  function toggleSections(categoryId, smallCategoryId, breakpoint) {
-    const categorySection = document.getElementById(categoryId);
-    const smallCategorySection = document.getElementById(smallCategoryId);
-
-    // Get the screen width
-    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-    // Determine whether to show the larger or smaller section based on screen width and the specified breakpoint
-    if (screenWidth <= breakpoint) {
-        categorySection.style.display = "none"; // Hide larger section
-        smallCategorySection.style.display = "block"; // Show smaller section
-    } else {
-        categorySection.style.display = "block"; // Show larger section
-        smallCategorySection.style.display = "none"; // Hide smaller section
-    }
-
-    // Scroll the page slightly to trigger the layout
-    window.scrollBy(0, 1);
-}
-
 // Call the toggleSections function for different categories and breakpoints
 window.addEventListener("load", () => {
     // Example usage for the "Thriller" category
@@ -256,4 +226,46 @@ window.addEventListener("resize", () => {
 
     toggleSections("exploreSection", "exploreSectionSmall", 1000);
 });
+
+generateBook2("historyBooks", "historyBook1", 0);
+generateBook2("historyBooks", "historyBook2", 1);
+generateBook2("historyBooks", "historyBook3", 2);
+generateBook2("historyBooks", "historyBook4", 3);
+generateBook2("historyBooks", "historyBook5", 4);
+generateBook2("historyBooks", "historyBook6", 5);
+
+generateBook2("thrillerBooks", "thrillerBook1", 0);
+generateBook2("thrillerBooks", "thrillerBook2", 1);
+generateBook2("thrillerBooks", "thrillerBook3", 2);
+generateBook2("thrillerBooks", "thrillerBook4", 3);
+generateBook2("thrillerBooks", "thrillerBook5", 4);
+generateBook2("thrillerBooks", "thrillerBook6", 5);
+
+
+// Add event listener to the "Add to Bag" button outside of generateBook2
+document.getElementById("bookInfoModal").addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-primary")) {
+        const bookName = event.target.dataset.bookName;
+        const bookCoverSrc = document.querySelector("#bookInfoModal img").src; // Get the book cover image source
+        addToBag(bookName, bookCoverSrc); // Pass bookCoverSrc instead of book description
+
+        const modal = bootstrap.Modal.getInstance(document.getElementById("bookInfoModal"));
+        modal.hide(); // Close the modal after adding to the bag
+    }
+});
+
+
+
+// Run the checkOverflow function on page load and window resize
+window.addEventListener('load', () => {
+    const sectionIds = ['exploreSection', 'historySection', 'thrillerSection']; // Add IDs of all sections to check
+    checkOverflow(sectionIds);
+});
+
+window.addEventListener('resize', () => {
+    const sectionIds = ['exploreSection', 'historySection', 'thrillerSection']; // Add IDs of all sections to check
+    checkOverflow(sectionIds);
+});
+
+
 
