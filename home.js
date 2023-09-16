@@ -25,6 +25,30 @@ sr.reveal("#exploreWebSection .container-fluid", {
   // Set this to true to repeat the animation
   // Set the delay between repeats in milliseconds (optional)
 });
+sr.reveal("#latestPostSection .section-title", {
+  duration: 800,
+  origin: "top",
+  distance: "130px",
+
+  // Set this to true to repeat the animation
+  // Set the delay between repeats in milliseconds (optional)
+});
+sr.reveal("#facebookPost", {
+  duration: 800,
+  origin: "left",
+  distance: "130px",
+
+  // Set this to true to repeat the animation
+  // Set the delay between repeats in milliseconds (optional)
+});
+sr.reveal("#instaPost", {
+  duration: 800,
+  origin: "right",
+  distance: "130px",
+
+  // Set this to true to repeat the animation
+  // Set the delay between repeats in milliseconds (optional)
+});
 
 // Add other ScrollReveal animations for other elements as needed
 
@@ -44,11 +68,19 @@ function checkOverflow(sectionIds) {
 
 // Run the checkOverflow function on page load and window resize
 window.addEventListener("load", () => {
-  const sectionIds = ["welcomeSection", "exploreWebSection"]; // Add IDs of all sections to check
+  const sectionIds = [
+    "welcomeSection",
+    "exploreWebSection",
+    "latestPostSection",
+  ]; // Add IDs of all sections to check
   checkOverflow(sectionIds);
 });
 
 window.addEventListener("resize", () => {
-  const sectionIds = ["welcomeSection", "exploreWebSection"]; // Add IDs of all sections to check
+  const sectionIds = [
+    "welcomeSection",
+    "exploreWebSection",
+    "latestPostSection",
+  ]; // Add IDs of all sections to check
   checkOverflow(sectionIds);
 });
