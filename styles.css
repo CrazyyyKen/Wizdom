@@ -1,7 +1,7 @@
 /* ------------------------------ Import font from extenal sources ------------------------------ */
 @font-face {
   font-family: Gidole;
-  src: url(fonts/Gidole-Regular.otf);
+  src: url(Gidole-Regular.otf);
 }
 
 body {
