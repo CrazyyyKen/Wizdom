@@ -12,7 +12,6 @@ function handleScroll() {
   }
 }
 
-
 // Attach event listeners
 window.addEventListener("load", () => {
   // Listen for the scroll event and call the handleScroll function
@@ -20,8 +19,13 @@ window.addEventListener("load", () => {
 
   handleScroll(); // Check scroll position on page load
 
-  // Attach the logoutAndPreventBack function to the logout button click event
-  document
-    .getElementById("logoutLink")
-    .addEventListener("click", function(){window.location.href = "login.html"});
+  document.getElementById("logoutLink").addEventListener("click", function () {
+    window.location.replace("login.html");
+  });
 });
+
+function noBack() {
+  window.history.forward();
+}
+
+noBack();

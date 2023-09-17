@@ -33,7 +33,7 @@ sr.reveal("#latestPostSection .section-title", {
   // Set this to true to repeat the animation
   // Set the delay between repeats in milliseconds (optional)
 });
-sr.reveal("#facebookPost", {
+sr.reveal("#instaPost1", {
   duration: 800,
   origin: "top",
   distance: "130px",
@@ -41,7 +41,7 @@ sr.reveal("#facebookPost", {
   // Set this to true to repeat the animation
   // Set the delay between repeats in milliseconds (optional)
 });
-sr.reveal("#instaPost", {
+sr.reveal("#instaPost2", {
   duration: 800,
   origin: "top",
   distance: "130px",

@@ -255,10 +255,3 @@ function signIn() {
     $("#signInEmail").focus();
   }
 }
-
-// Function to prevent going back
-function noBack() {
-  window.history.forward();
-}
-
-noBack();
