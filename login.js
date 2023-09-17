@@ -231,7 +231,7 @@ function signIn() {
     const userData = [email, password];
     sessionStorage.setItem("userData", JSON.stringify(userData));
 
-    // Redirect to home page after successful log in
+    // Redirect to welcome page after successful log in
     window.location.href = "welcome.html";
   } else if (!matchingEmail && email == email.match(emailPattern)) {
     alert("You haven't signed up before. Please sign up first.");

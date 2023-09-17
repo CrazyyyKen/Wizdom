@@ -404,7 +404,7 @@ span {
   cursor: pointer;
 }
 
-/* Default styles for the bookshelf */
+/* ------------------------------ Bookshelf ------------------------------ */
 .bookshelf {
   width: 100%;
   display: flex;

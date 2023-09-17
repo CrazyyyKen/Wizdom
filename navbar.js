@@ -12,13 +12,6 @@ function handleScroll() {
   }
 }
 
-// Function to handle logout and prevent going back
-function logoutAndPreventBack() {
-  // Perform logout actions here
-
-  // Redirect to the login page
-  window.location.replace("login.html");
-}
 
 // Attach event listeners
 window.addEventListener("load", () => {
@@ -30,5 +23,5 @@ window.addEventListener("load", () => {
   // Attach the logoutAndPreventBack function to the logout button click event
   document
     .getElementById("logoutLink")
-    .addEventListener("click", logoutAndPreventBack);
+    .addEventListener("click", function(){window.location.href = "login.html"});
 });

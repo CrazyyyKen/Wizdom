@@ -1,6 +1,5 @@
 // Trigger fade-in and fade-out effect based on the viewport height
 $(document).ready(function () {
-  // Function to check if an element is in the viewport
   function is70PercentInViewport(element) {
     var rect = element.getBoundingClientRect();
     var viewportHeight = window.innerHeight;
