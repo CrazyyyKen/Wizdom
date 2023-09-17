@@ -51,7 +51,7 @@ body {
 
 .navbar-brand,
 .nav-link {
-  font-size: 19px !important;
+  font-size: 16px !important;
 }
 
 .nav-link {
@@ -72,7 +72,7 @@ body {
 }
 
 .dropdown-item {
-  font-size: 19px;
+  font-size: 16px;
   transition: background-color 0.2s ease-in-out;
 }
 
@@ -126,14 +126,14 @@ body {
 }
 
 .modal-title {
-  font-size: 19px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .modal-body,
 .section-info,
 .accordion-button {
-  font-size: 19px !important;
+  font-size: 16px !important;
   text-align: justify !important;
 }
 
@@ -477,7 +477,7 @@ body {
   background-color: #fff !important;
   border-color: #d3d3d3 !important;
   color: #000000 !important;
-  font-size: 19px !important;
+  font-size: 16px !important;
   transition: background-color 0.2 ease-in-out, color 0.2s ease-in-out;
 }
 
