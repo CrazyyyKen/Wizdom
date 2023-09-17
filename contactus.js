@@ -4,16 +4,12 @@ sr.reveal("#locationColumn", {
   duration: 1000,
   origin: "top",
   distance: "100px",
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 
 sr.reveal("#inquiryFormColumn", {
   duration: 1000,
   origin: "top",
   distance: "100px",
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 
 $(document).ready(function () {

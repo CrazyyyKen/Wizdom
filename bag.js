@@ -175,7 +175,7 @@ checkoutButton.addEventListener("click", () => {
 
 // Function to generate and download the PDF receipt
 function generatePDF(userKey, rentalInfo) {
-  const pdf = new jsPDF(); // 'p' for portrait mode, 'mm' for millimeters, 'a4' for A4 size
+  const pdf = new jsPDF();
 
   var img = new Image();
   img.src = "Media/Logo.png";

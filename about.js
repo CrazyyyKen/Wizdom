@@ -4,42 +4,27 @@ srSpecial.reveal("#whoIsWizdomSection img", {
   duration: 1500,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 srSpecial.reveal(".welcome-text-column", {
   duration: 1000,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 sr.reveal("video", {
   duration: 1000,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 sr.reveal("#missionCard", {
   duration: 1000,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 
 sr.reveal("#visionCard", {
   duration: 1000,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 
 sr.reveal("#founderSection .section-title", {
@@ -57,27 +42,18 @@ sr.reveal("#founder1, #founder2", {
   duration: 1000,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 
 sr.reveal("#founder3, #founder4", {
   duration: 1000,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 
 sr.reveal("#missionVisionSection .btn", {
   duration: 1000,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 
 // Function to check for overflow and apply the class if needed

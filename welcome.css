@@ -1,0 +1,139 @@
+/* ------------------------------ Bouncing words ------------------------------ */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-25px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+#letterW {
+  animation: bounce 2s;
+}
+
+#letterI {
+  animation: bounce 2s;
+  animation-delay: 0.05s;
+}
+
+#letterZ {
+  animation: bounce 2s;
+  animation-delay: 0.1s;
+}
+
+#letterD {
+  animation: bounce 2s;
+  animation-delay: 0.15s;
+}
+
+#letterO1 {
+  animation: bounce 2s;
+  animation-delay: 0.2s;
+}
+
+#letterM {
+  animation: bounce 2s;
+  animation-delay: 0.25s;
+}
+
+#letterB {
+  animation: bounce 2s;
+  animation-delay: 0.05s;
+}
+
+#letterO2 {
+  animation: bounce 2s;
+  animation-delay: 0.05s;
+}
+
+#letterO3 {
+  animation: bounce 2s;
+  animation-delay: 0.1s;
+}
+
+#letterK {
+  animation: bounce 2s;
+  animation-delay: 0.1s;
+}
+
+#letterR {
+  animation: bounce 2s;
+  animation-delay: 0.15s;
+}
+
+#letterE {
+  animation: bounce 2s;
+  animation-delay: 0.15s;
+}
+
+#letterN {
+  animation: bounce 2s;
+  animation-delay: 0.15s;
+}
+
+#letterT {
+  animation: bounce 2s;
+  animation-delay: 0.2s;
+}
+
+#letterA {
+  animation: bounce 2s;
+  animation-delay: 0.2s;
+}
+
+#letterL {
+  animation: bounce 2s;
+  animation-delay: 0.2s;
+}
+
+/* ------------------------------ Blinking eyes ------------------------------ */
+@keyframes blink {
+  0%,
+  100% {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  55%,
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+#leftEye,
+#rightEye {
+  transform-origin: center bottom;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes appearFromTop {
+  0% {
+    transform: translateY(-50%);
+    fill-opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    fill-opacity: 1;
+  }
+}
+
+/* ------------------------------ Square cap appears from top ------------------------------ */
+#squareCap1,
+#squareCap2,
+#squareCap3 {
+  animation: appearFromTop 1.5s ease-in-out;
+}

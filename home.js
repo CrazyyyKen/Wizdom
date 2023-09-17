@@ -4,60 +4,38 @@ sr.reveal("#welcomeSection .welcome-text-column", {
   duration: 1500,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 sr.reveal(".intro-book", {
   duration: 1500,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 
 sr.reveal("#exploreWebSection .container-fluid", {
   duration: 800,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 sr.reveal("#latestPostSection .section-title", {
   duration: 800,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 sr.reveal("#instaPost1", {
   duration: 800,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 sr.reveal("#instaPost2", {
   duration: 800,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
 sr.reveal("#latestPostSection .home-btn", {
   duration: 800,
   origin: "top",
   distance: "130px",
-
-  // Set this to true to repeat the animation
-  // Set the delay between repeats in milliseconds (optional)
 });
-// Add other ScrollReveal animations for other elements as needed
 
 // Function to check for overflow and apply the class if needed
 function checkOverflow(sectionIds) {

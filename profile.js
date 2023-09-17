@@ -3,7 +3,7 @@ function getUserKey() {
   const userDataJSON = sessionStorage.getItem("userData");
   if (userDataJSON) {
     const userData = JSON.parse(userDataJSON);
-    return userData[0]; // Assuming that the first item in the array is the user's key (username or email)
+    return userData[0];
   }
   return null; // Return null if userData is not found in session storage
 }

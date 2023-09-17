@@ -1,4 +1,4 @@
-/* Import font from external source */
+/* ------------------------------ Import font from extenal sources ------------------------------ */
 @font-face {
   font-family: Gidole;
   src: url(fonts/Gidole-Regular.otf);
@@ -8,228 +8,50 @@ body {
   font-family: Gidole !important;
 }
 
-#profilePicture:hover {
-  opacity: 0.6;
-}
-
-#exploreWebSection .card-title {
-  font-size: 30px;
-}
-
-/* Define a class for handling overflow */
-.overflowed {
-  height: 100% !important;
-  /* When overflow occurs, set height to 100% */
-}
-
-#missionVisionSection .card,
-#workSection .card,
-#workSection iframe,
-#latestPostSection .col-md-5 {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-}
-
-/* Add this CSS to your styles.css file or a custom CSS file */
-#navbarSupportedContent {
+/* ------------------------------ Navigation bar ------------------------------ */
+/* Initial navbar */
+.navbar {
+  height: 80px;
   background-color: #fff;
-  /* Replace 'your-color-here' with your desired background color */
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Navbar color when scrolled */
+.navbar-scrolled,
+.navbar-scrolled .dropdown-menu,
+.navbar-scrolled #navbarSupportedContent,
+.navbar-scrolled .dropdown-menu #navbarSupportedContent {
+  background-color: #4a332d;
   transition: background-color 0.2s ease-in-out;
 }
 
-#exploreWebSection a {
-  text-decoration: none !important;
-  color: #000000 !important;
-}
-
-#signUpLink,
-#signInLink,
-#contactUsLink,
-#rulesAndRegulationsLink,
-#founderSection a:not(#founderSection .btn),
-#howItWorksLink {
-  text-decoration: none !important;
-  color: #896b60 !important;
+.navbar-scrolled .navbar-brand,
+.navbar-scrolled .nav-link,
+.navbar-scrolled .dropdown-item {
+  color: #fff !important;
   transition: color 0.2s ease-in-out;
 }
 
-#locationLink,
-#phoneLink,
-#whatsAppLink,
-#emailLink,
-#facebookLink,
-#instaLink,
-#youtubeLink {
-  text-decoration: none !important;
-  color: #000000 !important;
-  transition: color 0.2s ease-in-out;
+.navbar-scrolled .active {
+  color: #c6ac8f !important;
+  border-top: 0.1px solid #c6ac8f !important;
+  border-bottom: 0.1px solid #c6ac8f !important;
 }
 
-#signUpLink:hover,
-#signInLink:hover,
-#contactUsLink:hover,
-#rulesAndRegulationsLink:hover,
-#locationLink:hover,
-#phoneLink:hover,
-#whatsAppLink:hover,
-#emailLink:hover,
-#facebookLink:hover,
-#instaLink:hover,
-#youtubeLink:hover,
-#founderSection a:not(#founderSection .btn):hover,
-#footer .link-dark:hover,
-#howItWorksLink:hover {
-  color: #6c4a3f !important;
+.navbar-scrolled .nav-link:hover {
+  color: #c6ac8f !important;
+  border-top: 0.1px solid #c6ac8f !important;
+  border-bottom: 0.1px solid #c6ac8f !important;
 }
 
-#socialMediaShare svg:hover {
-  fill: #6c4a3f !important;
-}
-
-#signUpLink:focus,
-#signInLink:focus,
-#contactUsLink:focus,
-#rulesAndRegulationsLink:hover,
-#locationLink:focus,
-#phoneLink:focus,
-#whatsAppLink:focus,
-#emailLink:focus,
-#facebookLink:focus,
-#instaLink:focus,
-#youtubeLink:focus,
-#founderSection a:not(#founderSection .btn):focus,
-#footer .link-dark:focus,
-#howItWorksLink:focus {
-  color: #4a332d !important;
-}
-
-#signInSection,
-#signUpSection {
-  background-color: #f5f2ea;
-  border: 2px solid #eae0d5;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-}
-
-#homeWelcomeSection,
-#faqWelcomeSection,
-#workWelcomeSection,
-#aboutUsWelcomeSection,
-#contactWelcomeSection {
-  background-color: #eae0d5;
-}
-
-#signInSection .form-control,
-#signUpSection .form-control,
-#inquiryForm .form-control {
-  border-color: #d3d3d3 !important;
-}
-
-#signInSection .form-control:focus,
-#signUpSection .form-control:focus,
-#inquiryForm .form-control:focus {
-  border-color: #d3d3d3 !important;
-  box-shadow: 0 0 5px 2px #896b60 !important;
-}
-
-#signInSection input,
-#signUpSection input,
-#inquiryForm input {
-  font-size: 20px !important;
-}
-
-#signInSection .home-btn,
-#signUpSection .home-btn,
-#inquiryForm .home-btn {
-  width: 100%;
-  background-color: #c6ac8f !important;
-  transition: background-color 0.2 ease-in-out, color 0.2s ease-in-out;
-}
-
-#signInSection .home-btn:hover,
-#signUpSection .home-btn:hover,
-#inquiryForm .home-btn:hover {
-  background-color: #896b60 !important;
-  color: #fff !important;
-}
-
-#signInSection .home-btn:focus,
-#signUpSection .home-btn:focus,
-#inquiryForm .home-btn:focus {
-  background-color: #6c4a3f !important;
-  color: #fff !important;
-}
-
-.btn:not(.home-btn),
-.home-btn,
-.accordion-button {
-  background-color: #fff !important;
-  border-color: #d3d3d3 !important;
-  color: #000000 !important;
-  font-size: 19px !important;
-  transition: background-color 0.2 ease-in-out, color 0.2s ease-in-out;
-}
-
-.dropdown-item:hover {
-  background-color: #f5f2ea !important;
-}
-
-.btn-primary:hover,
-.home-btn:hover,
-.accordion-button:hover {
-  color: #000000 !important;
-  background-color: #f5f2ea !important;
-}
-
-.btn-primary:focus,
-.btn-primary:active,
-.home-btn:focus,
-.home-btn:active,
-.accordion-button:active,
-.accordion-button:focus,
-.accordion-button[aria-expanded="true"] {
-  color: #000000 !important;
-  background-color: #c6ac8f !important;
-  box-shadow: none !important;
-}
-
-.section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  padding-top: 80px;
-}
-
-.navbar {
-  height: 80px;
-  /* Initial background color of navbar */
-  background-color: #fff;
-
-  transition: background-color 0.3s ease-in-out;
+.navbar-scrolled .dropdown-item:hover {
+  color: #c6ac8f !important;
+  background-color: #4a332d !important;
 }
 
 .navbar-brand,
 .nav-link {
   font-size: 19px !important;
-}
-
-.modal-body,
-.section-info,
-.accordion-button {
-  font-size: 19px !important;
-  text-align: justify !important;
-}
-
-#exploreWebSection .card {
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-#exploreWebSection .card:hover {
-  opacity: 0.8;
-  cursor: pointer;
-  transform: translateY(-20px) !important;
-  box-shadow: 0px 44px 35px 0px rgba(0, 0, 0, 0.8);
 }
 
 .nav-link {
@@ -259,44 +81,36 @@ body {
   background-color: #c6ac8f !important;
 }
 
-#footer {
-  background-color: #fff;
+.dropdown-item:hover {
+  background-color: #f5f2ea !important;
 }
 
-/* Navbar color when scrolled */
-.navbar-scrolled,
-.navbar-scrolled .dropdown-menu,
-.navbar-scrolled #navbarSupportedContent,
-.navbar-scrolled .dropdown-menu #navbarSupportedContent {
-  background-color: #4a332d;
+#navbarSupportedContent {
+  background-color: #fff;
   transition: background-color 0.2s ease-in-out;
 }
 
-/* Navs color when scrolled */
-.navbar-scrolled .navbar-brand,
-.navbar-scrolled .nav-link,
-.navbar-scrolled .dropdown-item {
-  color: #fff !important;
-  transition: color 0.2s ease-in-out;
+/* ------------------------------ Section ------------------------------ */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
 }
 
-.navbar-scrolled .active {
-  color: #c6ac8f !important;
-  border-top: 0.1px solid #c6ac8f !important;
-  border-bottom: 0.1px solid #c6ac8f !important;
+/* On scroll fade in effect */
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
 }
 
-.navbar-scrolled .nav-link:hover {
-  color: #c6ac8f !important;
-  border-top: 0.1px solid #c6ac8f !important;
-  border-bottom: 0.1px solid #c6ac8f !important;
+.fade-in-section.active {
+  opacity: 1;
 }
 
-.navbar-scrolled .dropdown-item:hover {
-  color: #c6ac8f !important;
-  background-color: #4a332d !important;
-}
-
+/* ------------------------------ Section title and section info ------------------------------ */
 .section-title {
   font-size: 60px;
   color: #000000;
@@ -311,142 +125,19 @@ body {
   font-size: 80px;
 }
 
-#carousel1,
-#carousel2,
-#carousel3,
-#carousel2small,
-#carousel1small,
-#carousel3small {
-  height: 60vh;
-}
-
-.carousel-inner {
-  height: 45vh;
-}
-
-.carousel-indicators,
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-  filter: invert(1);
-}
-
-/* Properties to display book */
-.book {
-  --book-height: 45vh;
-  --book-ratio: 1.6;
-  --book-radius: 0px 13px 13px 0px;
-}
-
-.book > div {
-  height: var(--book-height);
-  width: calc(var(--book-height) / var(--book-ratio));
-  overflow: auto;
-  background-color: #0a0a0a;
-  transform: scale(0.9);
-  border-radius: 6px;
-  transform-origin: left;
-  border-radius: var(--book-radius);
-}
-
-.book-cover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index: 9;
-  text-align: center;
-  background: linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
-    linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
-    linear-gradient(315deg, black 25%, transparent 25%),
-    linear-gradient(45deg, black 25%, transparent 25%);
-  background-size: 2em 2em;
-  background-color: #232323;
-  color: white;
-  transition: transform 0.4s;
-}
-
-.book-cover::before {
-  position: absolute;
-  width: 0px;
-  left: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.book-content {
-  background-color: white !important;
-  box-shadow: 12px 12px 16px rgba(0, 0, 0, 0.8);
-}
-
-.book-cover > div {
-  transition: opacity 0s 0.6s;
-}
-
-.book:hover > .book-cover {
-  transform: rotateY(30deg) scale(0.9);
-  opacity: 0.8;
-}
-
 .modal-title {
   font-size: 19px;
   font-weight: bold;
 }
 
-.modal.modal-zoom.fade:not(.show) .modal-dialog {
-  transform: scale(0.9);
+.modal-body,
+.section-info,
+.accordion-button {
+  font-size: 19px !important;
+  text-align: justify !important;
 }
 
-.modal-backdrop {
-  opacity: 0.8 !important;
-}
-
-span {
-  cursor: pointer;
-}
-
-/* ------------------------------ Bookshelf ------------------------------ */
-.bookshelf {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-shrink: 0;
-  z-index: 0;
-  position: relative;
-  height: 0px;
-  box-sizing: border-box;
-  border-bottom: 16px solid #63462d;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  pointer-events: all;
-  margin-top: -30px;
-
-  /* Front side of bookshelf */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 16px;
-    background: linear-gradient(to top, #704f32, #b07c4f, #a47449, #ba8e4a);
-    height: 10px;
-    width: calc(100% + 40px);
-    box-shadow: 0px -1px 6px rgba(0, 0, 0, 0.05),
-      0px 4px 16px rgba(0, 0, 0, 0.25);
-    z-index: 20;
-  }
-}
-
-/* On scroll fade in effect */
-.fade-in-section {
-  opacity: 0;
-  /* Initial opacity to hide the section */
-  transition: opacity 1.5s ease-in-out;
-  /* Transition for the fade-in effect */
-}
-
-.fade-in-section.active {
-  opacity: 1;
-  /* Show the section with full opacity */
-}
-
+/* ------------------------------ Book in home.html ------------------------------ */
 .intro-book {
   top: 0;
   bottom: 0;
@@ -587,19 +278,296 @@ span {
   }
 }
 
-/* Media query for Large screens (≥1377x1694) */
+/* ------------------------------ Book in categories.html ------------------------------ */
+/* Properties to display book */
+.book {
+  --book-height: 45vh;
+  --book-ratio: 1.6;
+  --book-radius: 0px 13px 13px 0px;
+}
+
+.book > div {
+  height: var(--book-height);
+  width: calc(var(--book-height) / var(--book-ratio));
+  overflow: auto;
+  background-color: #0a0a0a;
+  transform: scale(0.9);
+  border-radius: 6px;
+  transform-origin: left;
+  border-radius: var(--book-radius);
+}
+
+.book-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  background: linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, black 25%, transparent 25%),
+    linear-gradient(45deg, black 25%, transparent 25%);
+  background-size: 2em 2em;
+  background-color: #232323;
+  color: white;
+  transition: transform 0.4s;
+}
+
+.book-cover::before {
+  position: absolute;
+  width: 0px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.book-content {
+  background-color: white !important;
+  box-shadow: 12px 12px 16px rgba(0, 0, 0, 0.8);
+}
+
+.book-cover > div {
+  transition: opacity 0s 0.6s;
+}
+
+.book:hover > .book-cover {
+  transform: rotateY(30deg) scale(0.9);
+  opacity: 0.8;
+}
+
+/* ------------------------------ Bookshelf ------------------------------ */
+.bookshelf {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 0;
+  position: relative;
+  height: 0px;
+  box-sizing: border-box;
+  border-bottom: 16px solid #63462d;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  pointer-events: all;
+  margin-top: -30px;
+
+  /* Front side of bookshelf */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    background: linear-gradient(to top, #704f32, #b07c4f, #a47449, #ba8e4a);
+    height: 10px;
+    width: calc(100% + 40px);
+    box-shadow: 0px -1px 6px rgba(0, 0, 0, 0.05),
+      0px 4px 16px rgba(0, 0, 0, 0.25);
+    z-index: 20;
+  }
+}
+
+/* ------------------------------ Carousel ------------------------------ */
+#carousel1,
+#carousel2,
+#carousel3,
+#carousel2small,
+#carousel1small,
+#carousel3small {
+  height: 60vh;
+}
+
+.carousel-inner {
+  height: 45vh;
+}
+
+.carousel-indicators,
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
+
+/* ------------------------------ Hyperlinks ------------------------------ */
+#signUpLink,
+#signInLink,
+#contactUsLink,
+#rulesAndRegulationsLink,
+#founderSection a:not(#founderSection .btn),
+#howItWorksLink {
+  text-decoration: none !important;
+  color: #896b60 !important;
+  transition: color 0.2s ease-in-out;
+}
+
+#locationLink,
+#phoneLink,
+#whatsAppLink,
+#emailLink,
+#facebookLink,
+#instaLink,
+#youtubeLink {
+  text-decoration: none !important;
+  color: #000000 !important;
+  transition: color 0.2s ease-in-out;
+}
+
+#signUpLink:hover,
+#signInLink:hover,
+#contactUsLink:hover,
+#rulesAndRegulationsLink:hover,
+#locationLink:hover,
+#phoneLink:hover,
+#whatsAppLink:hover,
+#emailLink:hover,
+#facebookLink:hover,
+#instaLink:hover,
+#youtubeLink:hover,
+#founderSection a:not(#founderSection .btn):hover,
+#footer .link-dark:hover,
+#howItWorksLink:hover {
+  color: #6c4a3f !important;
+}
+
+#socialMediaShare svg:hover {
+  fill: #6c4a3f !important;
+}
+
+#signUpLink:focus,
+#signInLink:focus,
+#contactUsLink:focus,
+#rulesAndRegulationsLink:hover,
+#locationLink:focus,
+#phoneLink:focus,
+#whatsAppLink:focus,
+#emailLink:focus,
+#facebookLink:focus,
+#instaLink:focus,
+#youtubeLink:focus,
+#founderSection a:not(#founderSection .btn):focus,
+#footer .link-dark:focus,
+#howItWorksLink:focus {
+  color: #4a332d !important;
+}
+
+/* ------------------------------ Button ------------------------------ */
+#signInSection .home-btn,
+#signUpSection .home-btn,
+#inquiryForm .home-btn {
+  width: 100%;
+  background-color: #c6ac8f !important;
+  transition: background-color 0.2 ease-in-out, color 0.2s ease-in-out;
+}
+
+#signInSection .home-btn:hover,
+#signUpSection .home-btn:hover,
+#inquiryForm .home-btn:hover {
+  background-color: #896b60 !important;
+  color: #fff !important;
+}
+
+#signInSection .home-btn:focus,
+#signUpSection .home-btn:focus,
+#inquiryForm .home-btn:focus {
+  background-color: #6c4a3f !important;
+  color: #fff !important;
+}
+
+.btn:not(.home-btn),
+.home-btn,
+.accordion-button {
+  background-color: #fff !important;
+  border-color: #d3d3d3 !important;
+  color: #000000 !important;
+  font-size: 19px !important;
+  transition: background-color 0.2 ease-in-out, color 0.2s ease-in-out;
+}
+
+.btn-primary:hover,
+.home-btn:hover,
+.accordion-button:hover {
+  color: #000000 !important;
+  background-color: #f5f2ea !important;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.home-btn:focus,
+.home-btn:active,
+.accordion-button:active,
+.accordion-button:focus,
+.accordion-button[aria-expanded="true"] {
+  color: #000000 !important;
+  background-color: #c6ac8f !important;
+  box-shadow: none !important;
+}
+
+/* ------------------------------ Form ------------------------------ */
+#signInSection .form-control,
+#signUpSection .form-control,
+#inquiryForm .form-control {
+  border-color: #d3d3d3 !important;
+}
+
+#signInSection .form-control:focus,
+#signUpSection .form-control:focus,
+#inquiryForm .form-control:focus {
+  border-color: #d3d3d3 !important;
+  box-shadow: 0 0 5px 2px #896b60 !important;
+}
+
+#signInSection input,
+#signUpSection input,
+#inquiryForm input {
+  font-size: 20px !important;
+}
+
+/* ------------------------------ Card ------------------------------ */
+#exploreWebSection .card-title {
+  font-size: 30px;
+}
+
+#missionVisionSection .card,
+#workSection .card,
+#workSection iframe,
+#latestPostSection .col-md-5 {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+#exploreWebSection .card {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+#exploreWebSection .card:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: translateY(-20px) !important;
+  box-shadow: 0px 44px 35px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* ------------------------------ Modal ------------------------------ */
+.modal.modal-zoom.fade:not(.show) .modal-dialog {
+  transform: scale(0.9);
+}
+
+.modal-backdrop {
+  opacity: 0.8 !important;
+}
+
+/* ------------------------------ Change height to 100% when overflow occurs ------------------------------ */
+.overflowed {
+  height: 100% !important;
+}
+
+/* ------------------------------ Responsiveness based on screen size ------------------------------ */
+/* Media query for Large screens */
 @media (max-width: 1400px) {
   #welcomeSection .row.justify-content-center.align-items-center {
     flex-direction: column;
-    /* Stack columns vertically */
   }
 
   #welcomeSection .col-md-4.pe-5 {
     margin-bottom: 20px;
-    /* Add spacing between columns */
   }
-
-  /* You can also adjust other styles as needed for this specific layout */
 }
 
 /* Styles for medium screens (2 columns) */
@@ -622,4 +590,29 @@ span {
   #exploreWebSection .col-md-4 {
     flex-basis: calc(100% - 20px);
   }
+}
+
+/* ------------------------------ Others ------------------------------ */
+#profilePicture:hover {
+  opacity: 0.6;
+}
+
+#exploreWebSection a {
+  text-decoration: none !important;
+  color: #000000 !important;
+}
+
+#signInSection,
+#signUpSection {
+  background-color: #f5f2ea;
+  border: 2px solid #eae0d5;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+#footer {
+  background-color: #fff;
+}
+
+span {
+  cursor: pointer;
 }
