@@ -438,7 +438,7 @@ span {
 .fade-in-section {
   opacity: 0;
   /* Initial opacity to hide the section */
-  transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease-in-out;
   /* Transition for the fade-in effect */
 }
 
