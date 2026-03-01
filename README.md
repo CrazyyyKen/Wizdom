@@ -1,2 +1,4 @@
-### **Link to Wizdom:**
-> https://wizdom.azurewebsites.net/login.html
+🌐 Live Website
+
+Access Wizdom here:
+https://crazyyyken.github.io/Wizdom/
